@@ -21,14 +21,25 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.Winevt.EVT_CHANNEL_CONFIG_PROPERTY_ID;
-import com.sun.jna.platform.win32.Winevt.EVT_HANDLE;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Wevtapi;
+import com.sun.unijna.platform.win32.WevtapiUtil;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.Winevt;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.Winevt.EVT_CHANNEL_CONFIG_PROPERTY_ID;
+import com.sun.unijna.platform.win32.Winevt.EVT_HANDLE;
+import com.sun.unijna.ptr.IntByReference;
+
 import junit.framework.TestCase;
 
 import java.io.File;

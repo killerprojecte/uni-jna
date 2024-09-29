@@ -21,17 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.win32;
+package com.sun.unijna.win32;
 
 import java.util.Arrays;
 import java.util.List;
 
-import junit.framework.TestCase;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.win32.W32APIOptions;
 
-import com.sun.jna.Library;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.Structure;
+import junit.framework.TestCase;
 
 public class W32APIMapperTest extends TestCase {
     // Unicode Character 'SINGLE RIGHT-POINTING ANGLE QUOTATION MARK': ›

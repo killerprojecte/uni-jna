@@ -22,11 +22,14 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.mac;
+package com.sun.unijna.platform.mac;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.sun.unijna.platform.mac.IOKit;
+import com.sun.unijna.platform.mac.IOReturnException;
 
 public class IOReturnExceptionTest {
 

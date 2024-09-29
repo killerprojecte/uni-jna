@@ -20,25 +20,27 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.Native.getLastError;
-import static com.sun.jna.platform.win32.SetupApi.DICS_FLAG_GLOBAL;
-import static com.sun.jna.platform.win32.SetupApi.DIGCF_ALLCLASSES;
-import static com.sun.jna.platform.win32.SetupApi.DIGCF_DEVICEINTERFACE;
-import static com.sun.jna.platform.win32.SetupApi.DIGCF_PRESENT;
-import static com.sun.jna.platform.win32.SetupApi.DIREG_DEV;
-import static com.sun.jna.platform.win32.SetupApi.GUID_DEVINTERFACE_COMPORT;
-import static com.sun.jna.platform.win32.WinBase.INVALID_HANDLE_VALUE;
-import static com.sun.jna.platform.win32.WinError.ERROR_NO_MORE_ITEMS;
-import static com.sun.jna.platform.win32.WinNT.KEY_QUERY_VALUE;
+import static com.sun.unijna.Native.getLastError;
+import static com.sun.unijna.platform.win32.SetupApi.DICS_FLAG_GLOBAL;
+import static com.sun.unijna.platform.win32.SetupApi.DIGCF_ALLCLASSES;
+import static com.sun.unijna.platform.win32.SetupApi.DIGCF_DEVICEINTERFACE;
+import static com.sun.unijna.platform.win32.SetupApi.DIGCF_PRESENT;
+import static com.sun.unijna.platform.win32.SetupApi.DIREG_DEV;
+import static com.sun.unijna.platform.win32.SetupApi.GUID_DEVINTERFACE_COMPORT;
+import static com.sun.unijna.platform.win32.WinBase.INVALID_HANDLE_VALUE;
+import static com.sun.unijna.platform.win32.WinError.ERROR_NO_MORE_ITEMS;
+import static com.sun.unijna.platform.win32.WinNT.KEY_QUERY_VALUE;
 import static org.junit.Assert.assertNotEquals;
 
-import junit.framework.TestCase;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.SetupApi;
+import com.sun.unijna.platform.win32.SetupApi.SP_DEVINFO_DATA;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinReg.HKEY;
 
-import com.sun.jna.platform.win32.SetupApi.SP_DEVINFO_DATA;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinReg.HKEY;
+import junit.framework.TestCase;
 
 public class SetupApiTest extends TestCase {
 

@@ -21,11 +21,20 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.FromNativeConverter;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.ToNativeConverter;
+import com.sun.unijna.TypeMapper;
 
 /**
  * Test native calls where the parameters and return types are bound as wrappers.

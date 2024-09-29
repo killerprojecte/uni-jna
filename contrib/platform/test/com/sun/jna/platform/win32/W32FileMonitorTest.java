@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,10 +31,11 @@ import java.util.Map;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.Platform;
-import com.sun.jna.platform.FileMonitor;
-import com.sun.jna.platform.FileMonitor.FileEvent;
-import com.sun.jna.platform.FileMonitor.FileListener;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.FileMonitor;
+import com.sun.unijna.platform.FileMonitor.FileEvent;
+import com.sun.unijna.platform.FileMonitor.FileListener;
+import com.sun.unijna.platform.win32.Kernel32Util;
 
 public class W32FileMonitorTest extends TestCase {
 

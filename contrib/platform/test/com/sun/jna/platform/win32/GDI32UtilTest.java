@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -30,7 +30,9 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import com.sun.jna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.GDI32Util;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.WinDef.HWND;
 
 public class GDI32UtilTest extends AbstractWin32TestSupport {
 

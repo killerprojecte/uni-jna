@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
@@ -35,19 +35,26 @@ import javax.swing.JFrame;
 
 import org.junit.Test;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.Psapi.MODULEINFO;
-import com.sun.jna.platform.win32.Psapi.PERFORMANCE_INFORMATION;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.HMODULE;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinNT.MEMORY_BASIC_INFORMATION;
-import com.sun.jna.platform.win32.BaseTSD.SIZE_T;
-import com.sun.jna.platform.win32.Psapi.PSAPI_WORKING_SET_EX_INFORMATION;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.Psapi;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.BaseTSD.SIZE_T;
+import com.sun.unijna.platform.win32.Psapi.MODULEINFO;
+import com.sun.unijna.platform.win32.Psapi.PERFORMANCE_INFORMATION;
+import com.sun.unijna.platform.win32.Psapi.PSAPI_WORKING_SET_EX_INFORMATION;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.HMODULE;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinNT.MEMORY_BASIC_INFORMATION;
+import com.sun.unijna.ptr.IntByReference;
 
 /**
  * Applies API tests on {@link Psapi}.

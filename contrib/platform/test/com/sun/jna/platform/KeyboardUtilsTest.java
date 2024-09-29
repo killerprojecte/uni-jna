@@ -21,15 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform;
+package com.sun.unijna.platform;
 
 import java.awt.GraphicsEnvironment;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
-import junit.framework.TestCase;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.KeyboardUtils;
 
-import com.sun.jna.Platform;
+import junit.framework.TestCase;
 
 public class KeyboardUtilsTest extends TestCase {
 

@@ -21,14 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.Cfgmgr32.CM_DRP_CONFIGFLAGS;
-import static com.sun.jna.platform.win32.Cfgmgr32.CM_DRP_DEVICEDESC;
-import static com.sun.jna.platform.win32.Cfgmgr32.CM_DRP_DEVICE_POWER_DATA;
-import static com.sun.jna.platform.win32.Cfgmgr32.CM_DRP_HARDWAREID;
-import static com.sun.jna.platform.win32.Cfgmgr32.CM_LOCATE_DEVNODE_NORMAL;
-import static com.sun.jna.platform.win32.Cfgmgr32.CR_SUCCESS;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CM_DRP_CONFIGFLAGS;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CM_DRP_DEVICEDESC;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CM_DRP_DEVICE_POWER_DATA;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CM_DRP_HARDWAREID;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CM_LOCATE_DEVNODE_NORMAL;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CR_INVALID_DEVNODE;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CR_INVALID_PROPERTY;
+import static com.sun.unijna.platform.win32.Cfgmgr32.CR_SUCCESS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -38,10 +40,9 @@ import java.util.Queue;
 
 import org.junit.Test;
 
-import com.sun.jna.ptr.IntByReference;
-
-import static com.sun.jna.platform.win32.Cfgmgr32.CR_INVALID_DEVNODE;
-import static com.sun.jna.platform.win32.Cfgmgr32.CR_INVALID_PROPERTY;
+import com.sun.unijna.platform.win32.Cfgmgr32;
+import com.sun.unijna.platform.win32.Cfgmgr32Util;
+import com.sun.unijna.ptr.IntByReference;
 
 /**
  * Tests methods in Cfgmgr32

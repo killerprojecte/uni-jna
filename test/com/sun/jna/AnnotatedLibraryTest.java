@@ -20,7 +20,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -30,6 +30,16 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Collections;
+
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.Library;
+import com.sun.unijna.MethodParameterContext;
+import com.sun.unijna.MethodResultContext;
+import com.sun.unijna.Native;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.TypeConverter;
+
 import junit.framework.TestCase;
 
 public class AnnotatedLibraryTest extends TestCase {

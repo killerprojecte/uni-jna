@@ -21,15 +21,19 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.platform.win32.WinDef.BOOLByReference;
-import com.sun.jna.platform.win32.WinRas.RASCREDENTIALS;
-import com.sun.jna.platform.win32.WinRas.RASDIALPARAMS;
-import com.sun.jna.platform.win32.WinRas.RASENTRY;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.platform.win32.Rasapi32;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinRas;
+import com.sun.unijna.platform.win32.WinDef.BOOLByReference;
+import com.sun.unijna.platform.win32.WinRas.RASCREDENTIALS;
+import com.sun.unijna.platform.win32.WinRas.RASDIALPARAMS;
+import com.sun.unijna.platform.win32.WinRas.RASENTRY;
+import com.sun.unijna.ptr.IntByReference;
 
 /**
  * @author drrobison@openroadsconsulting.com

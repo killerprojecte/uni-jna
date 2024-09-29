@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,20 +35,26 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.Tlhelp32.MODULEENTRY32W;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinNT.CACHE_RELATIONSHIP;
-import com.sun.jna.platform.win32.WinNT.GROUP_RELATIONSHIP;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.platform.win32.WinNT.LARGE_INTEGER;
-import com.sun.jna.platform.win32.WinNT.LOGICAL_PROCESSOR_RELATIONSHIP;
-import com.sun.jna.platform.win32.WinNT.NUMA_NODE_RELATIONSHIP;
-import com.sun.jna.platform.win32.WinNT.PROCESSOR_CACHE_TYPE;
-import com.sun.jna.platform.win32.WinNT.PROCESSOR_RELATIONSHIP;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_LOGICAL_PROCESSOR_INFORMATION;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.Tlhelp32.MODULEENTRY32W;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinNT.CACHE_RELATIONSHIP;
+import com.sun.unijna.platform.win32.WinNT.GROUP_RELATIONSHIP;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.platform.win32.WinNT.LARGE_INTEGER;
+import com.sun.unijna.platform.win32.WinNT.LOGICAL_PROCESSOR_RELATIONSHIP;
+import com.sun.unijna.platform.win32.WinNT.NUMA_NODE_RELATIONSHIP;
+import com.sun.unijna.platform.win32.WinNT.PROCESSOR_CACHE_TYPE;
+import com.sun.unijna.platform.win32.WinNT.PROCESSOR_RELATIONSHIP;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_LOGICAL_PROCESSOR_INFORMATION;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX;
 
 import junit.framework.TestCase;
 

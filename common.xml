@@ -30,7 +30,7 @@
     <property name="spec.title" value="Java Native Access (JNA)"/>
     <property name="spec.vendor" value="${vendor}"/>
     <property name="spec.version" value="${jna.major}"/>
-    <property name="impl.title" value="com.sun.jna"/>
+    <property name="impl.title" value="com.sun.unijna"/>
     <property name="impl.vendor" value="${spec.vendor}"/>
     <property name="impl.version" value="${jna.version} (b${jna.build})"/>
     <property name="javac.release" value="8" />

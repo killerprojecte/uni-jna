@@ -21,18 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.linux;
+package com.sun.unijna.platform.linux;
 
-import static com.sun.jna.platform.linux.ErrNo.EEXIST;
-import static com.sun.jna.platform.linux.Fcntl.O_CREAT;
-import static com.sun.jna.platform.linux.Fcntl.O_EXCL;
-import static com.sun.jna.platform.linux.Fcntl.O_RDWR;
-import static com.sun.jna.platform.linux.Fcntl.S_IRWXU;
-import static com.sun.jna.platform.linux.Mman.MAP_FAILED;
-import static com.sun.jna.platform.linux.Mman.MAP_SHARED;
-import static com.sun.jna.platform.linux.Mman.MS_SYNC;
-import static com.sun.jna.platform.linux.Mman.PROT_READ;
-import static com.sun.jna.platform.linux.Mman.PROT_WRITE;
+import static com.sun.unijna.platform.linux.ErrNo.EEXIST;
+import static com.sun.unijna.platform.linux.Fcntl.O_CREAT;
+import static com.sun.unijna.platform.linux.Fcntl.O_EXCL;
+import static com.sun.unijna.platform.linux.Fcntl.O_RDWR;
+import static com.sun.unijna.platform.linux.Fcntl.S_IRWXU;
+import static com.sun.unijna.platform.linux.Mman.MAP_FAILED;
+import static com.sun.unijna.platform.linux.Mman.MAP_SHARED;
+import static com.sun.unijna.platform.linux.Mman.MS_SYNC;
+import static com.sun.unijna.platform.linux.Mman.PROT_READ;
+import static com.sun.unijna.platform.linux.Mman.PROT_WRITE;
 import static org.junit.Assert.assertNotEquals;
 
 import java.io.IOException;
@@ -40,10 +40,12 @@ import java.security.SecureRandom;
 
 import org.junit.Test;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.unix.LibCAPI.size_t;
-import com.sun.jna.platform.unix.LibCUtil;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.linux.LibC;
+import com.sun.unijna.platform.linux.LibRT;
+import com.sun.unijna.platform.unix.LibCUtil;
+import com.sun.unijna.platform.unix.LibCAPI.size_t;
 
 import junit.framework.TestCase;
 

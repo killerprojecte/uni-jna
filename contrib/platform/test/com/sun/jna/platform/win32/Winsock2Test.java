@@ -21,10 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Native;
 import org.junit.Test;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Winsock2;
+
 import static org.junit.Assert.*;
 
 public class Winsock2Test {

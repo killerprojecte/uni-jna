@@ -7,11 +7,11 @@ Begin by downloading the latest release of JNA and referencing `jna.jar` in your
 
 The following example maps the printf function from the standard C library and calls it. 
 ``` java
-package com.sun.jna.examples;
+package com.sun.unijna.examples;
 
-import com.sun.jna.Library;
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
 
 /** Simple example of JNA interface mapping and usage. */
 public class HelloWorld {
@@ -48,13 +48,13 @@ Declare a Java interface to hold the native library methods by extending the Lib
 
 Following is an example of mapping for the Windows kernel32 library.
 ``` java
-package com.sun.jna.examples.win32;
+package com.sun.unijna.examples.win32;
 
-import com.sun.jna.*;
+import com.sun.unijna.*;
 
 // kernel32.dll uses the __stdcall calling convention (check the function
 // declaration for "WINAPI" or "PASCAL"), so extend StdCallLibrary
-// Most C libraries will just extend com.sun.jna.Library,
+// Most C libraries will just extend com.sun.unijna.Library,
 public interface Kernel32 extends StdCallLibrary { 
     // Method declarations, constant and structure definitions go here
 }
@@ -102,7 +102,7 @@ Several [example applications](https://github.com/java-native-access/jna/tree/ma
 
 Optimized Direct Mapping
 ------------------------
-JNA provides an additional method of mapping native methods, should you need extra performance.  You may declare a class to hold your native methods, declare any number of methods with the `native` qualifier, and invoke `Native.register(String)` in the class static initializer with your library's name. See [JNA Direct Mapping](DirectMapping.md) for an example, as well as any of the [`DirectXXXTest`](https://github.com/java-native-access/jna/tree/master/test/com/sun/jna) unit tests.
+JNA provides an additional method of mapping native methods, should you need extra performance.  You may declare a class to hold your native methods, declare any number of methods with the `native` qualifier, and invoke `Native.register(String)` in the class static initializer with your library's name. See [JNA Direct Mapping](DirectMapping.md) for an example, as well as any of the [`DirectXXXTest`](https://github.com/java-native-access/jna/tree/master/test/com/sun/unijna) unit tests.
 
 Automated Interface Generation
 ------------------------------

@@ -21,10 +21,10 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.IPHlpAPI.AF_INET;
-import static com.sun.jna.platform.win32.IPHlpAPI.AF_INET6;
+import static com.sun.unijna.platform.win32.IPHlpAPI.AF_INET;
+import static com.sun.unijna.platform.win32.IPHlpAPI.AF_INET6;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
@@ -38,22 +38,25 @@ import java.util.regex.Pattern;
 
 import org.junit.Test;
 
-import com.sun.jna.Memory;
-import com.sun.jna.platform.win32.IPHlpAPI.FIXED_INFO;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_IFROW;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_IF_ROW2;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCP6ROW_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCP6TABLE_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCPROW_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCPSTATS;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCPTABLE_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_TCP_STATE;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_UDP6TABLE_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_UDPSTATS;
-import com.sun.jna.platform.win32.IPHlpAPI.MIB_UDPTABLE_OWNER_PID;
-import com.sun.jna.platform.win32.IPHlpAPI.TCP_TABLE_CLASS;
-import com.sun.jna.platform.win32.IPHlpAPI.UDP_TABLE_CLASS;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.win32.IPHlpAPI;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.IPHlpAPI.FIXED_INFO;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_IFROW;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_IF_ROW2;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCP6ROW_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCP6TABLE_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCPROW_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCPSTATS;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCPTABLE_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_TCP_STATE;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_UDP6TABLE_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_UDPSTATS;
+import com.sun.unijna.platform.win32.IPHlpAPI.MIB_UDPTABLE_OWNER_PID;
+import com.sun.unijna.platform.win32.IPHlpAPI.TCP_TABLE_CLASS;
+import com.sun.unijna.platform.win32.IPHlpAPI.UDP_TABLE_CLASS;
+import com.sun.unijna.ptr.IntByReference;
 
 public class IPHlpAPITest {
     private static final IPHlpAPI IPHLP = IPHlpAPI.INSTANCE;

@@ -21,11 +21,11 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.WinBase.FILE_DIR_DISALOWED;
-import static com.sun.jna.platform.win32.WinBase.FILE_ENCRYPTABLE;
-import static com.sun.jna.platform.win32.WinBase.FILE_IS_ENCRYPTED;
+import static com.sun.unijna.platform.win32.WinBase.FILE_DIR_DISALOWED;
+import static com.sun.unijna.platform.win32.WinBase.FILE_ENCRYPTABLE;
+import static com.sun.unijna.platform.win32.WinBase.FILE_IS_ENCRYPTED;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -33,19 +33,30 @@ import java.nio.file.Files;
 import java.util.Map;
 import java.util.TreeMap;
 
-import com.sun.jna.platform.win32.Advapi32Util.Account;
-import com.sun.jna.platform.win32.Advapi32Util.EventLogIterator;
-import com.sun.jna.platform.win32.Advapi32Util.EventLogRecord;
-import com.sun.jna.platform.win32.Advapi32Util.Privilege;
-import com.sun.jna.platform.win32.LMAccess.USER_INFO_1;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinNT.HANDLEByReference;
-import com.sun.jna.platform.win32.WinNT.PSID;
-import com.sun.jna.platform.win32.WinNT.SECURITY_DESCRIPTOR_RELATIVE;
-import com.sun.jna.platform.win32.WinNT.SID_NAME_USE;
-import com.sun.jna.platform.win32.WinNT.WELL_KNOWN_SID_TYPE;
-import com.sun.jna.platform.win32.WinReg.HKEY;
-import com.sun.jna.platform.win32.WinReg.HKEYByReference;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.LMAccess;
+import com.sun.unijna.platform.win32.LMErr;
+import com.sun.unijna.platform.win32.Netapi32;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.WinReg;
+import com.sun.unijna.platform.win32.Advapi32Util.Account;
+import com.sun.unijna.platform.win32.Advapi32Util.EventLogIterator;
+import com.sun.unijna.platform.win32.Advapi32Util.EventLogRecord;
+import com.sun.unijna.platform.win32.Advapi32Util.Privilege;
+import com.sun.unijna.platform.win32.LMAccess.USER_INFO_1;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinNT.HANDLEByReference;
+import com.sun.unijna.platform.win32.WinNT.PSID;
+import com.sun.unijna.platform.win32.WinNT.SECURITY_DESCRIPTOR_RELATIVE;
+import com.sun.unijna.platform.win32.WinNT.SID_NAME_USE;
+import com.sun.unijna.platform.win32.WinNT.WELL_KNOWN_SID_TYPE;
+import com.sun.unijna.platform.win32.WinReg.HKEY;
+import com.sun.unijna.platform.win32.WinReg.HKEYByReference;
 
 import junit.framework.TestCase;
 

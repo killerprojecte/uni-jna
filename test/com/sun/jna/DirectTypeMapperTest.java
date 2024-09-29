@@ -22,9 +22,23 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.Collections;
+
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.FromNativeConverter;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.ToNativeConverter;
+import com.sun.unijna.TypeConverter;
+import com.sun.unijna.TypeMapper;
+import com.sun.unijna.WString;
+
 import junit.framework.TestCase;
 
 public class DirectTypeMapperTest extends TestCase {

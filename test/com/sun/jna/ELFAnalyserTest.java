@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.*;
 import org.junit.AfterClass;
@@ -29,6 +29,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.sun.unijna.ELFAnalyser;
 
 
 public class ELFAnalyserTest {
@@ -127,7 +129,7 @@ public class ELFAnalyserTest {
     }
 
     private static void extractTestFile(File outputFile) throws IOException {
-        String inputPath = "/com/sun/jna/data/" + outputFile.getName();
+        String inputPath = "/com/sun/unijna/data/" + outputFile.getName();
         try (InputStream is = ELFAnalyserTest.class.getResourceAsStream(inputPath);
                 OutputStream os = new FileOutputStream(outputFile)) {
             copyStream(is, os);

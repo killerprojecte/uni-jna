@@ -21,18 +21,8 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.BaseTSD.ULONG_PTR;
-import com.sun.jna.platform.win32.Ddeml.CONVINFO;
-import com.sun.jna.platform.win32.Ddeml.HCONV;
-import com.sun.jna.platform.win32.Ddeml.HDDEDATA;
-import com.sun.jna.platform.win32.Ddeml.HSZ;
-import com.sun.jna.platform.win32.DdemlUtil.DdeAdapter;
-import com.sun.jna.platform.win32.DdemlUtil.IDdeConnection;
-import com.sun.jna.platform.win32.DdemlUtil.StandaloneDdeClient;
 import java.io.Closeable;
 import java.util.Collections;
 import java.util.List;
@@ -49,18 +39,34 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import com.sun.jna.platform.win32.DdemlUtil.AdvstartHandler;
-import com.sun.jna.platform.win32.DdemlUtil.ConnectHandler;
-import com.sun.jna.platform.win32.DdemlUtil.AdvreqHandler;
-import com.sun.jna.platform.win32.DdemlUtil.RequestHandler;
-import com.sun.jna.platform.win32.DdemlUtil.WildconnectHandler;
-import com.sun.jna.platform.win32.DdemlUtil.AdvdataHandler;
-import com.sun.jna.platform.win32.DdemlUtil.ConnectConfirmHandler;
-import com.sun.jna.platform.win32.DdemlUtil.DisconnectHandler;
-import com.sun.jna.platform.win32.DdemlUtil.RegisterHandler;
-import com.sun.jna.platform.win32.DdemlUtil.XactCompleteHandler;
-import com.sun.jna.platform.win32.DdemlUtil.ExecuteHandler;
-import com.sun.jna.platform.win32.DdemlUtil.PokeHandler;
+
+import com.sun.unijna.Memory;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.BaseTSD;
+import com.sun.unijna.platform.win32.Ddeml;
+import com.sun.unijna.platform.win32.DdemlUtil;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinUser;
+import com.sun.unijna.platform.win32.BaseTSD.ULONG_PTR;
+import com.sun.unijna.platform.win32.Ddeml.CONVINFO;
+import com.sun.unijna.platform.win32.Ddeml.HCONV;
+import com.sun.unijna.platform.win32.Ddeml.HDDEDATA;
+import com.sun.unijna.platform.win32.Ddeml.HSZ;
+import com.sun.unijna.platform.win32.DdemlUtil.AdvdataHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.AdvreqHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.AdvstartHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.ConnectConfirmHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.ConnectHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.DdeAdapter;
+import com.sun.unijna.platform.win32.DdemlUtil.DisconnectHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.ExecuteHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.IDdeConnection;
+import com.sun.unijna.platform.win32.DdemlUtil.PokeHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.RegisterHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.RequestHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.StandaloneDdeClient;
+import com.sun.unijna.platform.win32.DdemlUtil.WildconnectHandler;
+import com.sun.unijna.platform.win32.DdemlUtil.XactCompleteHandler;
 
 
 public class DdemlUtilTest {

@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 
 import java.lang.ref.Reference;
@@ -33,7 +33,12 @@ import java.nio.ByteBuffer;
 import junit.framework.TestCase;
 import org.junit.Assert;
 
-import static com.sun.jna.Native.POINTER_SIZE;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+
+import static com.sun.unijna.Native.POINTER_SIZE;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.not;
 

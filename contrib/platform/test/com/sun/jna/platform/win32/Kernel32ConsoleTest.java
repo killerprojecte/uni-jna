@@ -21,18 +21,23 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.Wincon.CONSOLE_SCREEN_BUFFER_INFO;
-import com.sun.jna.platform.win32.Wincon.INPUT_RECORD;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.Wincon;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.Wincon.CONSOLE_SCREEN_BUFFER_INFO;
+import com.sun.unijna.platform.win32.Wincon.INPUT_RECORD;
+import com.sun.unijna.ptr.IntByReference;
+
 import org.junit.Assume;
 
 /**

@@ -20,10 +20,14 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.Arrays;
 import java.util.List;
+
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Structure;
 
 import junit.framework.TestCase;
 

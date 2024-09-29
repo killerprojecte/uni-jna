@@ -5,9 +5,9 @@ JNA includes `platform.jar` that has cross-platform mappings and mappings for a 
 
 Before you map your own functions, check the platform package documentation for an already mapped one.
 
-Platform-specific structures are mapped by header. For example, `ShlObj.h` structures can be found in `com.sun.jna.platform.win32.ShlObj`. Platform functions are mapped by library. For example, `Advapi32.dll` functions can be found in `com.sun.jna.platform.win32.Advapi32`. Simplified interfaces (wrappers) for `Advapi32.dll` functions can be found in `com.sun.jna.platform.win32.Advapi32Util`.
+Platform-specific structures are mapped by header. For example, `ShlObj.h` structures can be found in `com.sun.unijna.platform.win32.ShlObj`. Platform functions are mapped by library. For example, `Advapi32.dll` functions can be found in `com.sun.unijna.platform.win32.Advapi32`. Simplified interfaces (wrappers) for `Advapi32.dll` functions can be found in `com.sun.unijna.platform.win32.Advapi32Util`.
 
-Cross-platform functions and structures are implemented in `com.sun.jna.platform`. These currently include the following.
+Cross-platform functions and structures are implemented in `com.sun.unijna.platform`. These currently include the following.
 
 * `FileMonitor`: a cross-platform file system watcher
 * `FileUtils`: a cross-platform set of file-related functions, such as move to the recycle bin
@@ -21,7 +21,7 @@ COM support
 JNA contains two different approaches to binding COM object for access from 
 java. Both mainly focus on late-time-binding/invoke usage. 
 
-The first and older variant is found in the `com.sun.jna.platform.win32.COM`
+The first and older variant is found in the `com.sun.unijna.platform.win32.COM`
 package. The straightforward approach is to extend the class `COMBindingBaseObject` 
 as base class for all COM enabled java applications.
 
@@ -41,12 +41,12 @@ the example set by JNA itself, this approach is based on interfaces and using
 a [dynamic proxy](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Proxy.html) and an [InvocationHandler](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/InvocationHandler.html)
 to centralize the marshalling and demarshalling.
 
-The support for the second approach is demonstrated in the `com.sun.jna.platform.win32.COM.util`
+The support for the second approach is demonstrated in the `com.sun.unijna.platform.win32.COM.util`
 package.
 
 Both approaches are demonstrated in the [msoffice contrib project](https://github.com/java-native-access/jna/tree/master/contrib/msoffice).
 
-A minimal VTable based call sample can be found in `com.sun.jna.platform.win32.COM.COMInvoker`.
+A minimal VTable based call sample can be found in `com.sun.unijna.platform.win32.COM.COMInvoker`.
 
 
 * `ITypeLib.java`: a wrapper for a `TypeLib` definition
@@ -67,7 +67,7 @@ For both above described approaches code generators exist. Included is a generat
 for the first approach. Here is a sample call:
 
 ```
-java -cp "dist/jna.jar;dist/jna-platform.jar" com.sun.jna.platform.win32.COM.tlb.TlbImp -tlb.id {50A7E9B0-70EF-11D1-B75A-00A0C90564FE} -tlb.major.version 1 -tlb.minor.version 0 -bind.mode dispId -output.dir outputdir
+java -cp "dist/jna.jar;dist/jna-platform.jar" com.sun.unijna.platform.win32.COM.tlb.TlbImp -tlb.id {50A7E9B0-70EF-11D1-B75A-00A0C90564FE} -tlb.major.version 1 -tlb.minor.version 0 -bind.mode dispId -output.dir outputdir
 ```
 
 That call generates the bindings for the Microsoft Shell Controls.

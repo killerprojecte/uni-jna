@@ -21,19 +21,23 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.platform.win32.COM.TypeInfoUtil.TypeInfoDoc;
-import com.sun.jna.platform.win32.COM.TypeLibUtil.FindName;
-import com.sun.jna.platform.win32.COM.TypeLibUtil.IsName;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.OaIdl.FUNCDESC;
-import com.sun.jna.platform.win32.OaIdl.MEMBERID;
-import com.sun.jna.platform.win32.OaIdl.TYPEATTR;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.ITypeInfo;
+import com.sun.unijna.platform.win32.COM.TypeInfoUtil;
+import com.sun.unijna.platform.win32.COM.TypeLibUtil;
+import com.sun.unijna.platform.win32.COM.TypeInfoUtil.TypeInfoDoc;
+import com.sun.unijna.platform.win32.COM.TypeLibUtil.FindName;
+import com.sun.unijna.platform.win32.COM.TypeLibUtil.IsName;
+import com.sun.unijna.platform.win32.OaIdl.FUNCDESC;
+import com.sun.unijna.platform.win32.OaIdl.MEMBERID;
+import com.sun.unijna.platform.win32.OaIdl.TYPEATTR;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
 
 /**
  * @author dblock[at]dblock[dot]org

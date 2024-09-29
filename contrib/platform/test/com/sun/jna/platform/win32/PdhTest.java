@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.PrintStream;
 import java.util.Collection;
@@ -31,15 +31,20 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.Pdh.PDH_COUNTER_PATH_ELEMENTS;
-import com.sun.jna.platform.win32.Pdh.PDH_RAW_COUNTER;
-import com.sun.jna.platform.win32.PdhUtil.PdhEnumObjectItems;
-import com.sun.jna.platform.win32.PdhUtil.PdhException;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinNT.HANDLEByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Pdh;
+import com.sun.unijna.platform.win32.PdhMsg;
+import com.sun.unijna.platform.win32.PdhUtil;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinPerf;
+import com.sun.unijna.platform.win32.Pdh.PDH_COUNTER_PATH_ELEMENTS;
+import com.sun.unijna.platform.win32.Pdh.PDH_RAW_COUNTER;
+import com.sun.unijna.platform.win32.PdhUtil.PdhEnumObjectItems;
+import com.sun.unijna.platform.win32.PdhUtil.PdhException;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinNT.HANDLEByReference;
 
 /**
  * @author lgoldstein

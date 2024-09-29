@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -36,11 +36,32 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-import com.sun.jna.Callback.UncaughtExceptionHandler;
-import com.sun.jna.CallbacksTest.TestLibrary.CbCallback;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
-import com.sun.jna.win32.W32APIOptions;
+import com.sun.unijna.CallbacksTest.TestLibrary.CbCallback;
+import com.sun.unijna.AltCallingConvention;
+import com.sun.unijna.Callback;
+import com.sun.unijna.CallbackProxy;
+import com.sun.unijna.CallbackReference;
+import com.sun.unijna.CallbackThreadInitializer;
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.Function;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeMapped;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.TypeConverter;
+import com.sun.unijna.Union;
+import com.sun.unijna.WString;
+import com.sun.unijna.Callback.UncaughtExceptionHandler;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+import com.sun.unijna.win32.W32APIOptions;
 
 import junit.framework.TestCase;
 
@@ -1446,7 +1467,7 @@ public class CallbacksTest extends TestCase implements Paths {
         }
 
         final boolean[] called = { false };
-        class TestCallback implements TestLibrary.VoidCallback, com.sun.jna.win32.DLLCallback {
+        class TestCallback implements TestLibrary.VoidCallback, com.sun.unijna.win32.DLLCallback {
             @Override
             public void callback() {
                 called[0] = true;
@@ -1522,7 +1543,7 @@ public class CallbacksTest extends TestCase implements Paths {
         }
 
         final boolean[] called = { false };
-        class TestCallback implements TestLibrary.VoidCallback, com.sun.jna.win32.DLLCallback {
+        class TestCallback implements TestLibrary.VoidCallback, com.sun.unijna.win32.DLLCallback {
             @Override
             public void callback() {
                 called[0] = true;

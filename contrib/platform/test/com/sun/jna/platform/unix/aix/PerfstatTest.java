@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix.aix;
+package com.sun.unijna.platform.unix.aix;
 
 import static org.junit.Assert.assertNotEquals;
 
@@ -29,17 +29,18 @@ import java.lang.reflect.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_cpu_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_cpu_total_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_disk_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_id_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_memory_total_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_netinterface_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_partition_config_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_process_t;
-import com.sun.jna.platform.unix.aix.Perfstat.perfstat_protocol_t;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.unix.aix.Perfstat;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_cpu_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_cpu_total_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_disk_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_id_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_memory_total_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_netinterface_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_partition_config_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_process_t;
+import com.sun.unijna.platform.unix.aix.Perfstat.perfstat_protocol_t;
 
 import junit.framework.TestCase;
 

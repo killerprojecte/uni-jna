@@ -21,10 +21,9 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.Pointer;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -32,18 +31,25 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.ULONG;
-import com.sun.jna.platform.win32.WinDef.ULONGByReference;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.platform.win32.COM.util.ObjectFactory;
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.COM.util.annotation.ComProperty;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.EnumMoniker;
+import com.sun.unijna.platform.win32.COM.IEnumMoniker;
+import com.sun.unijna.platform.win32.COM.IRunningObjectTable;
+import com.sun.unijna.platform.win32.COM.RunningObjectTable;
+import com.sun.unijna.platform.win32.COM.util.ObjectFactory;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComProperty;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.ULONG;
+import com.sun.unijna.platform.win32.WinDef.ULONGByReference;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
+
 import org.junit.Assume;
 
 public class EnumMoniker_Test {

@@ -21,7 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.WString;
 
 /** Exercise a range of native methods.
  *

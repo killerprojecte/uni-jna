@@ -21,18 +21,21 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Memory;
-import com.sun.jna.platform.win32.PowrProf.POWER_INFORMATION_LEVEL;
-import com.sun.jna.platform.win32.WinBase.SYSTEM_INFO;
-import com.sun.jna.platform.win32.WinNT.POWER_ACTION;
-import com.sun.jna.platform.win32.WinNT.PROCESSOR_POWER_INFORMATION;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_BATTERY_STATE;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_POWER_CAPABILITIES;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_POWER_INFORMATION;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_POWER_POLICY;
-import com.sun.jna.platform.win32.WinNT.SYSTEM_POWER_STATE;
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.NTStatus;
+import com.sun.unijna.platform.win32.PowrProf;
+import com.sun.unijna.platform.win32.PowrProf.POWER_INFORMATION_LEVEL;
+import com.sun.unijna.platform.win32.WinBase.SYSTEM_INFO;
+import com.sun.unijna.platform.win32.WinNT.POWER_ACTION;
+import com.sun.unijna.platform.win32.WinNT.PROCESSOR_POWER_INFORMATION;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_BATTERY_STATE;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_POWER_CAPABILITIES;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_POWER_INFORMATION;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_POWER_POLICY;
+import com.sun.unijna.platform.win32.WinNT.SYSTEM_POWER_STATE;
 
 import junit.framework.TestCase;
 

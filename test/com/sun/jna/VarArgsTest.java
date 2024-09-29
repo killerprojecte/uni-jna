@@ -21,14 +21,17 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.VarArgsTest.TestLibrary.TestStructure;
+import com.sun.unijna.VarArgsTest.TestLibrary.TestStructure;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.Structure;
 
 public class VarArgsTest extends TestCase {
     final int MAGIC32 = 0x12345678;

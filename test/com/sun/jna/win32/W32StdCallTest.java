@@ -21,20 +21,21 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.win32;
+package com.sun.unijna.win32;
 
 import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.List;
 
-import junit.framework.TestCase;
+import com.sun.unijna.FunctionMapper;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Structure;
+import com.sun.unijna.win32.StdCallLibrary;
 
-import com.sun.jna.FunctionMapper;
-import com.sun.jna.Library;
-import com.sun.jna.Native;
-import com.sun.jna.NativeLibrary;
-import com.sun.jna.NativeLong;
-import com.sun.jna.Structure;
+import junit.framework.TestCase;
 
 /**
  * @author twall@users.sf.net

@@ -9,7 +9,7 @@ as in the example below. The `Native.register()` method takes the name of your
 native library, the same as `Native.load()` would.
 
 ```java
-import com.sun.jna.*;
+import com.sun.unijna.*;
 
 public class HelloWorld {
             

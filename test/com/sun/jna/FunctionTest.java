@@ -21,13 +21,22 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 import java.util.Collections;
 import junit.framework.TestCase;
 import org.junit.Assert;
+
+import com.sun.unijna.Function;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
 
 /** Exercise the {@link Function} class.
  *

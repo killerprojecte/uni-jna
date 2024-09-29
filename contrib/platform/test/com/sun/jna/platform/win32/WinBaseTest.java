@@ -21,14 +21,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import com.sun.jna.platform.win32.WinBase.DCB;
-import com.sun.jna.platform.win32.WinBase.FILETIME;
-import com.sun.jna.platform.win32.WinBase.SYSTEMTIME;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinBase.DCB;
+import com.sun.unijna.platform.win32.WinBase.FILETIME;
+import com.sun.unijna.platform.win32.WinBase.SYSTEMTIME;
 
 import junit.framework.TestCase;
 

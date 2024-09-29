@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
@@ -33,9 +33,12 @@ import java.util.logging.Logger;
 
 import org.junit.Test;
 
-import com.sun.jna.platform.win32.WinDef.ULONGByReference;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.WinDef.ULONGByReference;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.ptr.IntByReference;
 
 /**
  * @author lgoldstein

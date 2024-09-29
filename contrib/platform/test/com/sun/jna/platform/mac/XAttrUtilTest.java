@@ -21,9 +21,8 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.mac;
+package com.sun.unijna.platform.mac;
 
-import com.sun.jna.Pointer;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +30,10 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.mac.XAttr;
+import com.sun.unijna.platform.mac.XAttrUtil;
 
 import junit.framework.TestCase;
 

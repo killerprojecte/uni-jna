@@ -21,12 +21,14 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
+
+import com.sun.unijna.Platform;
 
 public interface Paths {
     boolean USING_CLOVER = System.getProperty("java.class.path").indexOf("clover") != -1;

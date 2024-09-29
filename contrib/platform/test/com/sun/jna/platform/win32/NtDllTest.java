@@ -21,22 +21,31 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.WinNT.DACL_SECURITY_INFORMATION;
-import static com.sun.jna.platform.win32.WinNT.GROUP_SECURITY_INFORMATION;
-import static com.sun.jna.platform.win32.WinNT.OWNER_SECURITY_INFORMATION;
+import static com.sun.unijna.platform.win32.WinNT.DACL_SECURITY_INFORMATION;
+import static com.sun.unijna.platform.win32.WinNT.GROUP_SECURITY_INFORMATION;
+import static com.sun.unijna.platform.win32.WinNT.OWNER_SECURITY_INFORMATION;
 import static org.junit.Assert.assertNotEquals;
 
 import java.io.File;
 import java.io.FileWriter;
 
-import com.sun.jna.Memory;
-import com.sun.jna.platform.win32.Wdm.KEY_BASIC_INFORMATION;
-import com.sun.jna.platform.win32.Wdm.KEY_INFORMATION_CLASS;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinReg.HKEYByReference;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.NTStatus;
+import com.sun.unijna.platform.win32.NtDll;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.Wdm;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.WinReg;
+import com.sun.unijna.platform.win32.Wdm.KEY_BASIC_INFORMATION;
+import com.sun.unijna.platform.win32.Wdm.KEY_INFORMATION_CLASS;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinReg.HKEYByReference;
+import com.sun.unijna.ptr.IntByReference;
 
 import junit.framework.TestCase;
 

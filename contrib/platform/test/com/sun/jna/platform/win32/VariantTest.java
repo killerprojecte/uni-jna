@@ -20,26 +20,32 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.platform.win32.OaIdl.DATE;
-import com.sun.jna.platform.win32.OaIdl.SAFEARRAY;
-import com.sun.jna.platform.win32.OaIdl.VARIANT_BOOL;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes.BSTR;
-import com.sun.jna.platform.win32.WTypes.VARTYPE;
-import com.sun.jna.platform.win32.WinBase.SYSTEMTIME;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.WinDef.BYTE;
-import com.sun.jna.platform.win32.WinDef.CHAR;
-import com.sun.jna.platform.win32.WinDef.LONG;
-import com.sun.jna.platform.win32.WinDef.LONGLONG;
-import com.sun.jna.platform.win32.WinDef.SHORT;
-import com.sun.jna.platform.win32.WinDef.USHORT;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.DoubleByReference;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.OaIdl.DATE;
+import com.sun.unijna.platform.win32.OaIdl.SAFEARRAY;
+import com.sun.unijna.platform.win32.OaIdl.VARIANT_BOOL;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WTypes.BSTR;
+import com.sun.unijna.platform.win32.WTypes.VARTYPE;
+import com.sun.unijna.platform.win32.WinBase.SYSTEMTIME;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.WinDef.BYTE;
+import com.sun.unijna.platform.win32.WinDef.CHAR;
+import com.sun.unijna.platform.win32.WinDef.LONG;
+import com.sun.unijna.platform.win32.WinDef.LONGLONG;
+import com.sun.unijna.platform.win32.WinDef.SHORT;
+import com.sun.unijna.platform.win32.WinDef.USHORT;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.DoubleByReference;
+
 import java.util.Date;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -161,7 +167,7 @@ public class VariantTest extends TestCase {
         // https://msdn.microsoft.com/en-us/library/aa393691.aspx
         // Date was chosen from the example that made the problem visible in testing
         Date testDate = new Date(2016 - 1900, 10 - 1, 12, 2, 59, 19);
-        assertEquals("java.util.Date -> com.sun.jna.platform.win32.OaIdl.DATE -> java.util.Date roundtrip failed",
+        assertEquals("java.util.Date -> com.sun.unijna.platform.win32.OaIdl.DATE -> java.util.Date roundtrip failed",
                      testDate, new DATE(testDate).getAsJavaDate());
     }
 

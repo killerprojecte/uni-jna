@@ -20,10 +20,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.platform.win32.WinNT;
 import org.junit.Test;
+
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMUtils;
 
 import static org.junit.Assert.*;
 

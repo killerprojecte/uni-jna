@@ -20,23 +20,28 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.COM.util.IDispatch;
-import com.sun.jna.platform.win32.COM.util.IRawDispatchHandle;
-import com.sun.jna.platform.win32.COM.util.ObjectFactory;
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.COM.util.annotation.ComProperty;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import static com.sun.jna.platform.win32.Variant.VARIANT.VARIANT_MISSING;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.COM.EnumVariant;
+import com.sun.unijna.platform.win32.COM.IComEnumVariantIterator;
+import com.sun.unijna.platform.win32.COM.IUnknown;
+import com.sun.unijna.platform.win32.COM.util.IDispatch;
+import com.sun.unijna.platform.win32.COM.util.IRawDispatchHandle;
+import com.sun.unijna.platform.win32.COM.util.ObjectFactory;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComProperty;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.ptr.PointerByReference;
+
 import org.junit.AfterClass;
+
+import static com.sun.unijna.platform.win32.Variant.VARIANT.VARIANT_MISSING;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.BeforeClass;
@@ -81,7 +86,7 @@ public class EnumVariantTest {
         try {
             for(VARIANT[] variants = ev.Next(1); variants.length > 0; variants = ev.Next(1)) {
                 for (VARIANT v : variants) {
-                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.jna.platform.win32.COM.IDispatch) v.getValue());
+                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.unijna.platform.win32.COM.IDispatch) v.getValue());
                     OleAuto.INSTANCE.VariantClear(v);
                     if (property.getName() != null && (!property.getName().isEmpty())
                             && property.getValue() != null) {
@@ -107,7 +112,7 @@ public class EnumVariantTest {
                     readMoreThanOneItem = variants.length > 1;
                 }
                 for (VARIANT v : variants) {
-                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.jna.platform.win32.COM.IDispatch) v.getValue());
+                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.unijna.platform.win32.COM.IDispatch) v.getValue());
                     OleAuto.INSTANCE.VariantClear(v);
                     if (property.getName() != null && (!property.getName().isEmpty())
                             && property.getValue() != null) {
@@ -133,7 +138,7 @@ public class EnumVariantTest {
         try {
             for(VARIANT[] variants = ev.Next(10); variants.length > 0; variants = ev.Next(10)) {
                 for (VARIANT v : variants) {
-                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.jna.platform.win32.COM.IDispatch) v.getValue());
+                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.unijna.platform.win32.COM.IDispatch) v.getValue());
                     OleAuto.INSTANCE.VariantClear(v);
                     if (property.getName() != null && (!property.getName().isEmpty())
                             && property.getValue() != null) {
@@ -144,7 +149,7 @@ public class EnumVariantTest {
             ev.Reset();
             for (VARIANT[] variants = ev.Next(10); variants.length > 0; variants = ev.Next(10)) {
                 for (VARIANT v : variants) {
-                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.jna.platform.win32.COM.IDispatch) v.getValue());
+                    ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.unijna.platform.win32.COM.IDispatch) v.getValue());
                     OleAuto.INSTANCE.VariantClear(v);
                     if (property.getName() != null && (!property.getName().isEmpty())
                             && property.getValue() != null) {
@@ -222,7 +227,7 @@ public class EnumVariantTest {
         // Test iteration with an enhanced for loop
         int elementsRead = 0;
         for (VARIANT v : IComEnumVariantIterator.wrap(propertySet)) {
-            ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.jna.platform.win32.COM.IDispatch) v.getValue());
+            ISWbemProperty property = fact.createProxy(ISWbemProperty.class, (com.sun.unijna.platform.win32.COM.IDispatch) v.getValue());
             OleAuto.INSTANCE.VariantClear(v);
             if(property.getName() != null && (! property.getName().isEmpty()) &&
                     property.getValue() != null ) {
@@ -287,7 +292,7 @@ public class EnumVariantTest {
          * @param strAuthority [in, optional] {@code String}
          * @param iSecurityFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ConnectServer", dispId = 0x1)
         ISWbemServices ConnectServer(Object strServer,
@@ -369,15 +374,15 @@ public class EnumVariantTest {
          * vtableId(8)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "PutAsync_", dispId = 0x2)
-        void PutAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void PutAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object iFlags,
                 Object objWbemNamedValueSet,
                 Object objWbemAsyncContext);
@@ -392,7 +397,7 @@ public class EnumVariantTest {
          *
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Delete_", dispId = 0x3)
         void Delete_(Object iFlags,
@@ -407,15 +412,15 @@ public class EnumVariantTest {
          * vtableId(10)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "DeleteAsync_", dispId = 0x4)
-        void DeleteAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void DeleteAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object iFlags,
                 Object objWbemNamedValueSet,
                 Object objWbemAsyncContext);
@@ -430,7 +435,7 @@ public class EnumVariantTest {
          *
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Instances_", dispId = 0x5)
         ISWbemObjectSet Instances_(Object iFlags,
@@ -445,15 +450,15 @@ public class EnumVariantTest {
          * vtableId(12)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "InstancesAsync_", dispId = 0x6)
-        void InstancesAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void InstancesAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object iFlags,
                 Object objWbemNamedValueSet,
                 Object objWbemAsyncContext);
@@ -468,7 +473,7 @@ public class EnumVariantTest {
          *
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Subclasses_", dispId = 0x7)
         ISWbemObjectSet Subclasses_(Object iFlags,
@@ -483,15 +488,15 @@ public class EnumVariantTest {
          * vtableId(14)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "SubclassesAsync_", dispId = 0x8)
-        void SubclassesAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void SubclassesAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object iFlags,
                 Object objWbemNamedValueSet,
                 Object objWbemAsyncContext);
@@ -514,7 +519,7 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Associators_", dispId = 0x9)
         ISWbemObjectSet Associators_(Object strAssocClass,
@@ -537,7 +542,7 @@ public class EnumVariantTest {
          * vtableId(16)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strAssocClass [in, optional] {@code String}
          * @param strResultClass [in, optional] {@code String}
          * @param strResultRole [in, optional] {@code String}
@@ -548,12 +553,12 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "AssociatorsAsync_", dispId = 0xa)
-        void AssociatorsAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void AssociatorsAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object strAssocClass,
                 Object strResultClass,
                 Object strResultRole,
@@ -581,7 +586,7 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "References_", dispId = 0xb)
         ISWbemObjectSet References_(Object strResultClass,
@@ -601,7 +606,7 @@ public class EnumVariantTest {
          * vtableId(18)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strResultClass [in, optional] {@code String}
          * @param strRole [in, optional] {@code String}
          * @param bClassesOnly [in, optional] {@code Boolean}
@@ -609,12 +614,12 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ReferencesAsync_", dispId = 0xc)
-        void ReferencesAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ReferencesAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object strResultClass,
                 Object strRole,
                 Object bClassesOnly,
@@ -634,10 +639,10 @@ public class EnumVariantTest {
          *
          * @param strMethodName [in] {@code String}
          * @param objWbemInParameters [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecMethod_", dispId = 0xd)
         ISWbemObject ExecMethod_(String strMethodName,
@@ -654,18 +659,18 @@ public class EnumVariantTest {
          * vtableId(20)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strMethodName [in] {@code String}
          * @param objWbemInParameters [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecMethodAsync_", dispId = 0xe)
-        void ExecMethodAsync_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ExecMethodAsync_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strMethodName,
                 Object objWbemInParameters,
                 Object iFlags,
@@ -731,11 +736,11 @@ public class EnumVariantTest {
          * vtableId(25)</p>
          *
          * @param objWbemObject [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          */
         @ComMethod(name = "CompareTo_", dispId = 0x13)
-        Boolean CompareTo_(com.sun.jna.platform.win32.COM.util.IDispatch objWbemObject,
+        Boolean CompareTo_(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemObject,
                 Object iFlags);
 
         /**
@@ -926,7 +931,7 @@ public class EnumVariantTest {
          * @param strObjectPath [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Get", dispId = 0x1)
         ISWbemObject Get(Object strObjectPath,
@@ -942,16 +947,16 @@ public class EnumVariantTest {
          * vtableId(8)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strObjectPath [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "GetAsync", dispId = 0x2)
-        void GetAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void GetAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object strObjectPath,
                 Object iFlags,
                 Object objWbemNamedValueSet,
@@ -968,7 +973,7 @@ public class EnumVariantTest {
          * @param strObjectPath [in] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "Delete", dispId = 0x3)
         void Delete(String strObjectPath,
@@ -984,16 +989,16 @@ public class EnumVariantTest {
          * vtableId(10)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strObjectPath [in] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "DeleteAsync", dispId = 0x4)
-        void DeleteAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void DeleteAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strObjectPath,
                 Object iFlags,
                 Object objWbemNamedValueSet,
@@ -1010,7 +1015,7 @@ public class EnumVariantTest {
          * @param strClass [in] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "InstancesOf", dispId = 0x5)
         ISWbemObjectSet InstancesOf(String strClass,
@@ -1026,16 +1031,16 @@ public class EnumVariantTest {
          * vtableId(12)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strClass [in] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "InstancesOfAsync", dispId = 0x6)
-        void InstancesOfAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void InstancesOfAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strClass,
                 Object iFlags,
                 Object objWbemNamedValueSet,
@@ -1052,7 +1057,7 @@ public class EnumVariantTest {
          * @param strSuperclass [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "SubclassesOf", dispId = 0x7)
         ISWbemObjectSet SubclassesOf(Object strSuperclass,
@@ -1068,16 +1073,16 @@ public class EnumVariantTest {
          * vtableId(14)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strSuperclass [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "SubclassesOfAsync", dispId = 0x8)
-        void SubclassesOfAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void SubclassesOfAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 Object strSuperclass,
                 Object iFlags,
                 Object objWbemNamedValueSet,
@@ -1095,7 +1100,7 @@ public class EnumVariantTest {
          * @param strQueryLanguage [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecQuery", dispId = 0x9)
         ISWbemObjectSet ExecQuery(String strQuery,
@@ -1112,17 +1117,17 @@ public class EnumVariantTest {
          * vtableId(16)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strQuery [in] {@code String}
          * @param strQueryLanguage [in, optional] {@code String}
          * @param lFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecQueryAsync", dispId = 0xa)
-        void ExecQueryAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ExecQueryAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strQuery,
                 Object strQueryLanguage,
                 Object lFlags,
@@ -1148,7 +1153,7 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "AssociatorsOf", dispId = 0xb)
         ISWbemObjectSet AssociatorsOf(String strObjectPath,
@@ -1172,7 +1177,7 @@ public class EnumVariantTest {
          * vtableId(18)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strObjectPath [in] {@code String}
          * @param strAssocClass [in, optional] {@code String}
          * @param strResultClass [in, optional] {@code String}
@@ -1184,12 +1189,12 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "AssociatorsOfAsync", dispId = 0xc)
-        void AssociatorsOfAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void AssociatorsOfAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strObjectPath,
                 Object strAssocClass,
                 Object strResultClass,
@@ -1219,7 +1224,7 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ReferencesTo", dispId = 0xd)
         ISWbemObjectSet ReferencesTo(String strObjectPath,
@@ -1240,7 +1245,7 @@ public class EnumVariantTest {
          * vtableId(20)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strObjectPath [in] {@code String}
          * @param strResultClass [in, optional] {@code String}
          * @param strRole [in, optional] {@code String}
@@ -1249,12 +1254,12 @@ public class EnumVariantTest {
          * @param strRequiredQualifier [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ReferencesToAsync", dispId = 0xe)
-        void ReferencesToAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ReferencesToAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strObjectPath,
                 Object strResultClass,
                 Object strRole,
@@ -1274,17 +1279,17 @@ public class EnumVariantTest {
          * vtableId(22)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strQuery [in] {@code String}
          * @param strQueryLanguage [in, optional] {@code String}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecNotificationQueryAsync", dispId = 0x10)
-        void ExecNotificationQueryAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ExecNotificationQueryAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strQuery,
                 Object strQueryLanguage,
                 Object iFlags,
@@ -1302,10 +1307,10 @@ public class EnumVariantTest {
          * @param strObjectPath [in] {@code String}
          * @param strMethodName [in] {@code String}
          * @param objWbemInParameters [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecMethod", dispId = 0x11)
         ISWbemObject ExecMethod(String strObjectPath,
@@ -1323,19 +1328,19 @@ public class EnumVariantTest {
          * vtableId(24)</p>
          *
          * @param objWbemSink [in]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param strObjectPath [in] {@code String}
          * @param strMethodName [in] {@code String}
          * @param objWbemInParameters [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param iFlags [in, optional] {@code Integer}
          * @param objWbemNamedValueSet [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          * @param objWbemAsyncContext [in, optional]
-         * {@code com.sun.jna.platform.win32.COM.util.IDispatch}
+         * {@code com.sun.unijna.platform.win32.COM.util.IDispatch}
          */
         @ComMethod(name = "ExecMethodAsync", dispId = 0x12)
-        void ExecMethodAsync(com.sun.jna.platform.win32.COM.util.IDispatch objWbemSink,
+        void ExecMethodAsync(com.sun.unijna.platform.win32.COM.util.IDispatch objWbemSink,
                 String strObjectPath,
                 String strMethodName,
                 Object objWbemInParameters,

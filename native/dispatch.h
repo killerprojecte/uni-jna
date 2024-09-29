@@ -201,7 +201,7 @@ typedef struct _callback {
 #define EUnsupportedOperation "java/lang/UnsupportedOperationException"
 #define ERuntime "java/lang/RuntimeException"
 #define EError "java/lang/Error"
-#define ELastError "com/sun/jna/LastErrorException"
+#define ELastError "com/sun/unijna/LastErrorException"
 
 extern void throwByName(JNIEnv *env, const char *name, const char *msg);
 extern int get_java_type(JNIEnv*, jclass);

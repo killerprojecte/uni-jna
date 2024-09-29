@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -32,7 +32,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Collections;
 
-import com.sun.jna.win32.W32APIOptions;
+import com.sun.unijna.Function;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.win32.W32APIOptions;
 
 import junit.framework.TestCase;
 

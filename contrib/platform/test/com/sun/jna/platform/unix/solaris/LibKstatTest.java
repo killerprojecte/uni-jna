@@ -21,18 +21,19 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix.solaris;
+package com.sun.unijna.platform.unix.solaris;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.unix.solaris.LibKstat.Kstat;
-import com.sun.jna.platform.unix.solaris.LibKstat.KstatCtl;
-import com.sun.jna.platform.unix.solaris.LibKstat.KstatNamed;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.unix.solaris.LibKstat;
+import com.sun.unijna.platform.unix.solaris.LibKstat.Kstat;
+import com.sun.unijna.platform.unix.solaris.LibKstat.KstatCtl;
+import com.sun.unijna.platform.unix.solaris.LibKstat.KstatNamed;
 
 import junit.framework.TestCase;
 

@@ -20,7 +20,9 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
+
+import com.sun.unijna.Native;
 
 import junit.framework.TestCase;
 

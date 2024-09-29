@@ -7,7 +7,7 @@ Here's a brief example of using JNA from JRuby:
 require 'java'
 
 module Libc
-  @@lib = com.sun.jna.NativeLibrary.getInstance("c")
+  @@lib = com.sun.unijna.NativeLibrary.getInstance("c")
   @@ptr_funcs = [ 'fopen', 'malloc', 'calloc' ]
   def self.method_missing(meth, *args)
     if @@ptr_funcs.include?(meth.to_s)

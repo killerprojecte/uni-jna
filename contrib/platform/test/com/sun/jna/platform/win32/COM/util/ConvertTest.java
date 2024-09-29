@@ -20,26 +20,32 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM.util;
+package com.sun.unijna.platform.win32.COM.util;
 
-import com.sun.jna.Pointer;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
-import com.sun.jna.platform.win32.COM.COMUtils;
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.OaIdl.DATE;
-import com.sun.jna.platform.win32.OaIdl.VARIANT_BOOL;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes.BSTR;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.WinDef.BYTE;
-import com.sun.jna.platform.win32.WinDef.CHAR;
-import com.sun.jna.platform.win32.WinDef.LONG;
-import com.sun.jna.platform.win32.WinDef.SHORT;
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
+
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.util.Convert;
+import com.sun.unijna.platform.win32.COM.util.IComEnum;
+import com.sun.unijna.platform.win32.COM.util.IConnectionPoint;
+import com.sun.unijna.platform.win32.COM.util.IUnknown;
+import com.sun.unijna.platform.win32.COM.util.ObjectFactory;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.OaIdl.DATE;
+import com.sun.unijna.platform.win32.OaIdl.VARIANT_BOOL;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WTypes.BSTR;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.WinDef.BYTE;
+import com.sun.unijna.platform.win32.WinDef.CHAR;
+import com.sun.unijna.platform.win32.WinDef.LONG;
+import com.sun.unijna.platform.win32.WinDef.SHORT;
 
 import java.util.Calendar;
 import java.util.Date;

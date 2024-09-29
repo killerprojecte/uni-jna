@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -31,11 +31,32 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-import com.sun.jna.Structure.FieldOrder;
-import com.sun.jna.Structure.StructureSet;
-import com.sun.jna.ptr.ByteByReference;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.LongByReference;
+import com.sun.unijna.Callback;
+import com.sun.unijna.CallbackReference;
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.FromNativeConverter;
+import com.sun.unijna.Function;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.PointerType;
+import com.sun.unijna.Structure;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.ToNativeConverter;
+import com.sun.unijna.TypeConverter;
+import com.sun.unijna.TypeMapper;
+import com.sun.unijna.Union;
+import com.sun.unijna.WString;
+import com.sun.unijna.Structure.FieldOrder;
+import com.sun.unijna.Structure.StructureSet;
+import com.sun.unijna.ptr.ByteByReference;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.LongByReference;
 
 import junit.framework.TestCase;
 

@@ -21,12 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.util.List;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Structure;
 
 import junit.framework.TestCase;
 

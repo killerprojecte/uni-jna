@@ -23,22 +23,23 @@
 
 package jnacontrib.win32;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.Advapi32;
-import com.sun.jna.platform.win32.WinError;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.platform.win32.Winsvc;
-import com.sun.jna.platform.win32.Winsvc.HandlerEx;
-import com.sun.jna.platform.win32.Winsvc.SC_HANDLE;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_DESCRIPTION;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_MAIN_FUNCTION;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_STATUS;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_STATUS_HANDLE;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_TABLE_ENTRY;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
+
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.Winsvc;
+import com.sun.unijna.platform.win32.Winsvc.HandlerEx;
+import com.sun.unijna.platform.win32.Winsvc.SC_HANDLE;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_DESCRIPTION;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_MAIN_FUNCTION;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_STATUS;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_STATUS_HANDLE;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_TABLE_ENTRY;
 
 /**
  * Baseclass for a Win32 service.

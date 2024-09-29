@@ -21,12 +21,22 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM.util;
+package com.sun.unijna.platform.win32.COM.util;
 
-import com.sun.jna.platform.win32.AbstractWin32TestSupport;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
-import com.sun.jna.platform.win32.COM.COMException;
-import com.sun.jna.platform.win32.COM.COMInvokeException;
+import com.sun.unijna.platform.win32.AbstractWin32TestSupport;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMInvokeException;
+import com.sun.unijna.platform.win32.COM.util.Factory;
+import com.sun.unijna.platform.win32.COM.util.IComEnum;
+import com.sun.unijna.platform.win32.COM.util.IDispatch;
+import com.sun.unijna.platform.win32.COM.util.IUnknown;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComProperty;
+
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
 import static org.junit.Assert.*;
 
 import java.io.File;
@@ -36,12 +46,6 @@ import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComProperty;
-import com.sun.jna.platform.win32.WinError;
 import org.junit.Assume;
 
 public class ProxyObjectFactory_Test {

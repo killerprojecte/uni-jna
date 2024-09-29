@@ -21,9 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.List;
+
+import com.sun.unijna.Callback;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.Union;
+import com.sun.unijna.WString;
 
 import junit.framework.TestCase;
 

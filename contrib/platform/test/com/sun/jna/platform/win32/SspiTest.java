@@ -20,9 +20,11 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.platform.win32.Sspi.SEC_WINNT_AUTH_IDENTITY;
+import com.sun.unijna.platform.win32.Sspi;
+import com.sun.unijna.platform.win32.Sspi.SEC_WINNT_AUTH_IDENTITY;
+
 import junit.framework.TestCase;
 
 public class SspiTest extends TestCase {

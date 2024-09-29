@@ -21,17 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Structure;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_DEVICEINTERFACE;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_DEVNODE;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_HANDLE;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_HDR;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_NET;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_OEM;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_PORT;
-import com.sun.jna.platform.win32.DBT.DEV_BROADCAST_VOLUME;
+import com.sun.unijna.Structure;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_DEVICEINTERFACE;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_DEVNODE;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_HANDLE;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_HDR;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_NET;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_OEM;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_PORT;
+import com.sun.unijna.platform.win32.DBT.DEV_BROADCAST_VOLUME;
+
 import org.junit.Test;
 
 public class DBTTest {

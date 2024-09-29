@@ -21,14 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix;
+package com.sun.unijna.platform.unix;
 
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
 import java.sql.Date;
 import java.util.Map;
 
 import org.junit.Test;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.unix.LibC;
 
 /**
  * @author Lyor Goldstein

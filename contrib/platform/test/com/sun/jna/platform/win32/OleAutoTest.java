@@ -21,18 +21,23 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.platform.win32.Guid.CLSID;
-import com.sun.jna.platform.win32.WTypes.BSTR;
-import com.sun.jna.platform.win32.WinDef.LCID;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.platform.win32.COM.COMUtils;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes.VARTYPE;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.Guid.CLSID;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WTypes.BSTR;
+import com.sun.unijna.platform.win32.WTypes.VARTYPE;
+import com.sun.unijna.platform.win32.WinDef.LCID;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
 
 /**
  * @author dblock[at]dblock[dot]org

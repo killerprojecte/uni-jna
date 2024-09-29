@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.linux;
+package com.sun.unijna.platform.linux;
 
 import java.io.IOException;
 import java.nio.file.FileStore;
@@ -30,11 +30,12 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.linux.LibC.Statvfs;
-import com.sun.jna.platform.linux.LibC.Sysinfo;
-import com.sun.jna.platform.unix.LibCAPI.size_t;
-import com.sun.jna.platform.unix.LibCAPI.ssize_t;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.linux.LibC;
+import com.sun.unijna.platform.linux.LibC.Statvfs;
+import com.sun.unijna.platform.linux.LibC.Sysinfo;
+import com.sun.unijna.platform.unix.LibCAPI.size_t;
+import com.sun.unijna.platform.unix.LibCAPI.ssize_t;
 
 import junit.framework.TestCase;
 

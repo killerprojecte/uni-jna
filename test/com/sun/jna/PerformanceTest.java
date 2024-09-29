@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import junit.framework.*;
 import java.io.File;
@@ -32,8 +32,20 @@ import java.util.Map;
 import java.util.Collections;
 import java.lang.reflect.Method;
 
-import com.sun.jna.DirectTest.TestInterface;
-import com.sun.jna.DirectTest.TestLibrary;
+import com.sun.unijna.DirectTest.TestInterface;
+import com.sun.unijna.DirectTest.TestLibrary;
+import com.sun.unijna.Function;
+import com.sun.unijna.FunctionMapper;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeString;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
 
 //@SuppressWarnings("unused")
 public class PerformanceTest extends TestCase implements Paths {

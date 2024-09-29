@@ -21,12 +21,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.PsapiUtil;
 
 /**
  * Applies API tests on {@link PsapiUtil}.

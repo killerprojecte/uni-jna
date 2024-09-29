@@ -21,9 +21,9 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.User32.INSTANCE;
+import static com.sun.unijna.platform.win32.User32.INSTANCE;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -37,31 +37,38 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.DesktopWindow;
-import com.sun.jna.platform.WindowUtils;
-import com.sun.jna.platform.win32.BaseTSD.ULONG_PTR;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinDef.HDC;
-import com.sun.jna.platform.win32.WinDef.HICON;
-import com.sun.jna.platform.win32.WinDef.HKL;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinDef.LPARAM;
-import com.sun.jna.platform.win32.WinDef.LRESULT;
-import com.sun.jna.platform.win32.WinDef.POINT;
-import com.sun.jna.platform.win32.WinDef.RECT;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.WPARAM;
-import com.sun.jna.platform.win32.WinGDI.ICONINFO;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinUser.HMONITOR;
-import com.sun.jna.platform.win32.WinUser.LASTINPUTINFO;
-import com.sun.jna.platform.win32.WinUser.MONITORENUMPROC;
-import com.sun.jna.platform.win32.WinUser.MONITORINFO;
-import com.sun.jna.platform.win32.WinUser.MONITORINFOEX;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.DesktopWindow;
+import com.sun.unijna.platform.WindowUtils;
+import com.sun.unijna.platform.win32.GDI32;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.Win32VK;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinUser;
+import com.sun.unijna.platform.win32.BaseTSD.ULONG_PTR;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinDef.HDC;
+import com.sun.unijna.platform.win32.WinDef.HICON;
+import com.sun.unijna.platform.win32.WinDef.HKL;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinDef.LPARAM;
+import com.sun.unijna.platform.win32.WinDef.LRESULT;
+import com.sun.unijna.platform.win32.WinDef.POINT;
+import com.sun.unijna.platform.win32.WinDef.RECT;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.WPARAM;
+import com.sun.unijna.platform.win32.WinGDI.ICONINFO;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinUser.HMONITOR;
+import com.sun.unijna.platform.win32.WinUser.LASTINPUTINFO;
+import com.sun.unijna.platform.win32.WinUser.MONITORENUMPROC;
+import com.sun.unijna.platform.win32.WinUser.MONITORINFO;
+import com.sun.unijna.platform.win32.WinUser.MONITORINFOEX;
 
 import javax.swing.JFrame;
 import javax.swing.JWindow;

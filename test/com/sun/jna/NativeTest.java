@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -32,6 +32,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+
+import com.sun.unijna.Callback;
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Structure;
+import com.sun.unijna.TypeMapper;
 
 import junit.framework.TestCase;
 
@@ -499,30 +509,30 @@ public class NativeTest extends TestCase {
         else {
             if (args.length == 1 && "all".equals(args[0])) {
                 args = new String[] {
-                    "com.sun.jna.NativeTest",
-                    "com.sun.jna.NativeLibraryTest",
-                    "com.sun.jna.PointerTest",
-                    "com.sun.jna.MemoryTest",
-                    "com.sun.jna.LibraryLoadTest",
-                    "com.sun.jna.ArgumentsMarshalTest",
-                    "com.sun.jna.ReturnTypesTest",
-                    "com.sun.jna.TypeMapperTest",
-                    "com.sun.jna.ByReferenceArgumentsTest",
-                    "com.sun.jna.LastErrorTest",
-                    "com.sun.jna.StructureTest",// 1 wce failure (RO fields)
-                    "com.sun.jna.StructureByValueTest",
-                    "com.sun.jna.UnionTest",
-                    "com.sun.jna.IntegerTypeTest",
-                    "com.sun.jna.VMCrashProtectionTest",
-                    "com.sun.jna.CallbacksTest",
-                    "com.sun.jna.JNAUnloadTest",
-                    "com.sun.jna.DirectTest",
-                    "com.sun.jna.DirectArgumentsMarshalTest",
-                    "com.sun.jna.DirectByReferenceArgumentsTest",
-                    "com.sun.jna.DirectTypeMapperTest",
-                    "com.sun.jna.DirectReturnTypesTest",
-                    "com.sun.jna.DirectStructureByValueTest",
-                    "com.sun.jna.DirectCallbacksTest",
+                    "com.sun.unijna.NativeTest",
+                    "com.sun.unijna.NativeLibraryTest",
+                    "com.sun.unijna.PointerTest",
+                    "com.sun.unijna.MemoryTest",
+                    "com.sun.unijna.LibraryLoadTest",
+                    "com.sun.unijna.ArgumentsMarshalTest",
+                    "com.sun.unijna.ReturnTypesTest",
+                    "com.sun.unijna.TypeMapperTest",
+                    "com.sun.unijna.ByReferenceArgumentsTest",
+                    "com.sun.unijna.LastErrorTest",
+                    "com.sun.unijna.StructureTest",// 1 wce failure (RO fields)
+                    "com.sun.unijna.StructureByValueTest",
+                    "com.sun.unijna.UnionTest",
+                    "com.sun.unijna.IntegerTypeTest",
+                    "com.sun.unijna.VMCrashProtectionTest",
+                    "com.sun.unijna.CallbacksTest",
+                    "com.sun.unijna.JNAUnloadTest",
+                    "com.sun.unijna.DirectTest",
+                    "com.sun.unijna.DirectArgumentsMarshalTest",
+                    "com.sun.unijna.DirectByReferenceArgumentsTest",
+                    "com.sun.unijna.DirectTypeMapperTest",
+                    "com.sun.unijna.DirectReturnTypesTest",
+                    "com.sun.unijna.DirectStructureByValueTest",
+                    "com.sun.unijna.DirectCallbacksTest",
                 };
             }
             System.out.println("Test suites: " + args.length);

@@ -21,21 +21,25 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.platform.win32.OaIdl.HREFTYPEByReference;
-import com.sun.jna.platform.win32.OaIdl.INVOKEKIND;
-import com.sun.jna.platform.win32.OaIdl.MEMBERID;
-import com.sun.jna.platform.win32.WTypes.BSTR;
-import com.sun.jna.platform.win32.WTypes.BSTRByReference;
-import com.sun.jna.platform.win32.WTypes.LPOLESTR;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.UINTByReference;
-import com.sun.jna.platform.win32.WinDef.WORDByReference;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.ITypeInfo;
+import com.sun.unijna.platform.win32.COM.TypeLibUtil;
+import com.sun.unijna.platform.win32.OaIdl.HREFTYPEByReference;
+import com.sun.unijna.platform.win32.OaIdl.INVOKEKIND;
+import com.sun.unijna.platform.win32.OaIdl.MEMBERID;
+import com.sun.unijna.platform.win32.WTypes.BSTR;
+import com.sun.unijna.platform.win32.WTypes.BSTRByReference;
+import com.sun.unijna.platform.win32.WTypes.LPOLESTR;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.UINTByReference;
+import com.sun.unijna.platform.win32.WinDef.WORDByReference;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+
 import org.junit.Ignore;
 import org.junit.Test;
 

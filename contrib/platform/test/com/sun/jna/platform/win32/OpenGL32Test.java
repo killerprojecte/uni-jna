@@ -21,13 +21,20 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.GDI32;
+import com.sun.unijna.platform.win32.GL;
+import com.sun.unijna.platform.win32.OpenGL32;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.User32Util;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinGDI;
+import com.sun.unijna.platform.win32.WinDef.HDC;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinGDI.PIXELFORMATDESCRIPTOR;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.WinDef.HDC;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinGDI.PIXELFORMATDESCRIPTOR;
 
 /**
  * @author drrobison@openroadsconsulting.com

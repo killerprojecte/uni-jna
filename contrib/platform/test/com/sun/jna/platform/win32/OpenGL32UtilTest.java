@@ -21,7 +21,9 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.OpenGL32Util;
 
 import junit.framework.TestCase;
 

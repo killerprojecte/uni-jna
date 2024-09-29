@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform;
+package com.sun.unijna.platform;
 
 import java.awt.AlphaComposite;
 import java.awt.BorderLayout;
@@ -54,9 +54,10 @@ import javax.swing.JWindow;
 import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputAdapter;
 
-import junit.framework.TestCase;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.WindowUtils;
 
-import com.sun.jna.Platform;
+import junit.framework.TestCase;
 
 // NOTE: java.awt.Robot can't properly capture transparent pixels
 // Transparency tests are disabled until this can be resolved

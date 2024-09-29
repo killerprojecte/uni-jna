@@ -179,6 +179,6 @@ License
 
 This library is licensed under the LGPL, version 2.1 or later, or (from version 4.0 onward) the Apache License, version 2.0. Commercial support may be available, please e-mail twall[at]users[dot]sf[dot]net. See [LICENSE](LICENSE) for more information.
 
-*NOTE: Oracle is not sponsoring this project, even though the package name (com.sun.jna) might imply otherwise.*
+*NOTE: Oracle is not sponsoring this project, even though the package name (com.sun.unijna) might imply otherwise.*
 
 

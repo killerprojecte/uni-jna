@@ -21,40 +21,49 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.WString;
-import com.sun.jna.platform.win32.AbstractWin32TestSupport;
-import com.sun.jna.platform.win32.Guid;
-import com.sun.jna.platform.win32.Guid.CLSID;
-import com.sun.jna.platform.win32.Guid.IID;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.OaIdl.DISPID;
-import com.sun.jna.platform.win32.OaIdl.DISPIDByReference;
-import com.sun.jna.platform.win32.OaIdl.EXCEPINFO;
-import com.sun.jna.platform.win32.OaIdl.VARIANT_BOOLByReference;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.OleAuto.DISPPARAMS;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WinDef;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinDef.LCID;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.UINTByReference;
-import com.sun.jna.platform.win32.WinDef.WORD;
-import com.sun.jna.platform.win32.WinError;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.AbstractWin32TestSupport;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.WString;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.ConnectionPoint;
+import com.sun.unijna.platform.win32.COM.ConnectionPointContainer;
+import com.sun.unijna.platform.win32.COM.Dispatch;
+import com.sun.unijna.platform.win32.COM.DispatchListener;
+import com.sun.unijna.platform.win32.COM.IDispatch;
+import com.sun.unijna.platform.win32.COM.IDispatchCallback;
+import com.sun.unijna.platform.win32.COM.Unknown;
+import com.sun.unijna.platform.win32.Guid.CLSID;
+import com.sun.unijna.platform.win32.Guid.IID;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.OaIdl.DISPID;
+import com.sun.unijna.platform.win32.OaIdl.DISPIDByReference;
+import com.sun.unijna.platform.win32.OaIdl.EXCEPINFO;
+import com.sun.unijna.platform.win32.OaIdl.VARIANT_BOOLByReference;
+import com.sun.unijna.platform.win32.OleAuto.DISPPARAMS;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinDef.LCID;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.UINTByReference;
+import com.sun.unijna.platform.win32.WinDef.WORD;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+
 import org.junit.Assert;
 
 public class ComEventCallbacks_Test {

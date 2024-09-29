@@ -23,11 +23,11 @@
  */
 package jnacontrib.x11.demos;
 
-import jnacontrib.x11.api.X;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.platform.unix.X11;
+import com.sun.unijna.ptr.IntByReference;
 
-import com.sun.jna.platform.unix.X11;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.NativeLong;
+import jnacontrib.x11.api.X;
 
 /**
  * Demonstration of the X extension XTest.

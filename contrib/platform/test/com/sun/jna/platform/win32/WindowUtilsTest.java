@@ -20,11 +20,11 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import static org.junit.Assert.assertNotEquals;
-import static com.sun.jna.platform.WindowUtilsTest.assertPixelColor;
-import static com.sun.jna.platform.WindowUtilsTest.getPixelColor;
+import static com.sun.unijna.platform.WindowUtilsTest.assertPixelColor;
+import static com.sun.unijna.platform.WindowUtilsTest.getPixelColor;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,18 +38,19 @@ import java.awt.Dimension;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
-import com.sun.jna.Pointer;
-
-import com.sun.jna.platform.WindowUtils;
-import com.sun.jna.platform.DesktopWindow;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinDef.HICON;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinDef.LPARAM;
-import com.sun.jna.platform.win32.WinDef.LRESULT;
-import com.sun.jna.platform.win32.WinDef.WPARAM;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.DesktopWindow;
+import com.sun.unijna.platform.WindowUtils;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.WinUser;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinDef.HICON;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinDef.LPARAM;
+import com.sun.unijna.platform.win32.WinDef.LRESULT;
+import com.sun.unijna.platform.win32.WinDef.WPARAM;
 
 public class WindowUtilsTest extends TestCase {
 

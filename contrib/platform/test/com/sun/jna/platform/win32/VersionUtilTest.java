@@ -20,11 +20,12 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.File;
 
-import com.sun.jna.platform.win32.VerRsrc.VS_FIXEDFILEINFO;
+import com.sun.unijna.platform.win32.VersionUtil;
+import com.sun.unijna.platform.win32.VerRsrc.VS_FIXEDFILEINFO;
 
 import junit.framework.TestCase;
 

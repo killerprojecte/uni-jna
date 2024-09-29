@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.awt.Frame;
 import java.awt.GraphicsEnvironment;
@@ -34,6 +34,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Collections;
+
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.WString;
 
 import junit.framework.TestCase;
 
@@ -77,7 +84,7 @@ public class LibraryLoadTest extends TestCase implements Paths {
 
     public void testExtractFromResourcePathWithNullClassLoader() throws Exception {
         // doesn't actually load the resource
-        assertNotNull(Native.extractFromResourcePath("/com/sun/jna/LibraryLoadTest.class", null));
+        assertNotNull(Native.extractFromResourcePath("/com/sun/unijna/LibraryLoadTest.class", null));
     }
 
     public void testLoadFromJNALibraryPath() {

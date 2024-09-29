@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform;
+package com.sun.unijna.platform;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.Shape;
@@ -31,7 +31,8 @@ import java.awt.image.Raster;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sun.jna.platform.RasterRangesUtils.RangesOutput;
+import com.sun.unijna.platform.RasterRangesUtils;
+import com.sun.unijna.platform.RasterRangesUtils.RangesOutput;
 
 import junit.framework.TestCase;
 

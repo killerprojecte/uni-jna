@@ -21,17 +21,22 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.platform.win32.Winsvc.ENUM_SERVICE_STATUS;
 import java.util.List;
+
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.W32Service;
+import com.sun.unijna.platform.win32.W32ServiceManager;
+import com.sun.unijna.platform.win32.Winsvc;
+import com.sun.unijna.platform.win32.Winsvc.ENUM_SERVICE_STATUS;
+import com.sun.unijna.platform.win32.Winsvc.SC_ACTION;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_FAILURE_ACTIONS;
+import com.sun.unijna.platform.win32.Winsvc.SERVICE_STATUS_PROCESS;
+
 import java.util.LinkedList;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.Winsvc.SC_ACTION;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_STATUS_PROCESS;
-import com.sun.jna.platform.win32.Winsvc.SERVICE_FAILURE_ACTIONS;
 
 public class W32ServiceTest extends TestCase {
 
@@ -49,9 +54,9 @@ public class W32ServiceTest extends TestCase {
 
     public void testCreateServiceDeleteService() {
         // This tests:
-        // - com.sun.jna.platform.win32.Advapi32.CreateService
-        // - com.sun.jna.platform.win32.Advapi32.DeleteService
-        // - com.sun.jna.platform.win32.Advapi32.SERVICE_DESCRIPTION
+        // - com.sun.unijna.platform.win32.Advapi32.CreateService
+        // - com.sun.unijna.platform.win32.Advapi32.DeleteService
+        // - com.sun.unijna.platform.win32.Advapi32.SERVICE_DESCRIPTION
         Win32ServiceDemo.uninstall();
         assertTrue(Win32ServiceDemo.install());
         assertTrue(Win32ServiceDemo.uninstall());
@@ -62,13 +67,13 @@ public class W32ServiceTest extends TestCase {
         Win32ServiceDemo.uninstall();
         Win32ServiceDemo.install();
         // This test implicitly tests the "service side" functions/members:
-        // - com.sun.jna.platform.win32.Advapi32.StartServiceCtrlDispatcher
-        // - com.sun.jna.platform.win32.Advapi32.SERVICE_TABLE_ENTRY
-        // - com.sun.jna.platform.win32.Advapi32.RegisterServiceCtrlHandlerEx
-        // - com.sun.jna.platform.win32.Advapi32.SetServiceStatus
-        // - com.sun.jna.platform.win32.Advapi32.SERVICE_MAIN_FUNCTION
-        // - com.sun.jna.platform.win32.Advapi32.HandlerEx
-        // - com.sun.jna.platform.win32.Advapi32.SERVICE_STATUS_HANDLE
+        // - com.sun.unijna.platform.win32.Advapi32.StartServiceCtrlDispatcher
+        // - com.sun.unijna.platform.win32.Advapi32.SERVICE_TABLE_ENTRY
+        // - com.sun.unijna.platform.win32.Advapi32.RegisterServiceCtrlHandlerEx
+        // - com.sun.unijna.platform.win32.Advapi32.SetServiceStatus
+        // - com.sun.unijna.platform.win32.Advapi32.SERVICE_MAIN_FUNCTION
+        // - com.sun.unijna.platform.win32.Advapi32.HandlerEx
+        // - com.sun.unijna.platform.win32.Advapi32.SERVICE_STATUS_HANDLE
         W32Service service = _serviceManager.openService(Win32ServiceDemo.serviceName, Winsvc.SERVICE_ALL_ACCESS);
         service.startService();
         assertEquals(service.queryStatus().dwCurrentState, Winsvc.SERVICE_RUNNING);

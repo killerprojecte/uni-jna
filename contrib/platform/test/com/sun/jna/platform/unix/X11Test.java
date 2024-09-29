@@ -21,13 +21,14 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix;
+package com.sun.unijna.platform.unix;
 
-import com.sun.jna.StructureFieldOrderInspector;
+import com.sun.unijna.StructureFieldOrderInspector;
+import com.sun.unijna.platform.unix.X11;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+
 import java.awt.GraphicsEnvironment;
-
-import com.sun.jna.ptr.PointerByReference;
-import com.sun.jna.ptr.IntByReference;
 
 import junit.framework.TestCase;
 import org.junit.Assert;

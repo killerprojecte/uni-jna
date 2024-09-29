@@ -21,12 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.Secur32Util;
+import com.sun.unijna.platform.win32.Secur32.EXTENDED_NAME_FORMAT;
+import com.sun.unijna.platform.win32.Secur32Util.SecurityPackage;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.Secur32.EXTENDED_NAME_FORMAT;
-import com.sun.jna.platform.win32.Secur32Util.SecurityPackage;
 
 /**
  * @author dblock[at]dblock[dot]org

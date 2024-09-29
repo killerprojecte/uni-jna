@@ -21,30 +21,32 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 import java.security.*;
 import java.security.cert.X509Certificate;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.WinCrypt.DATA_BLOB;
-import com.sun.jna.ptr.PointerByReference;
-import com.sun.jna.platform.win32.WinCrypt.*;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.Memory;
-import com.sun.jna.Pointer;
-import com.sun.jna.Structure;
-import com.sun.jna.platform.win32.WTypes.LPSTR;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.platform.win32.Crypt32;
+import com.sun.unijna.platform.win32.Crypt32Util;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinCrypt;
+import com.sun.unijna.platform.win32.WTypes.LPSTR;
+import com.sun.unijna.platform.win32.WinCrypt.*;
+import com.sun.unijna.platform.win32.WinCryptUtil.MANAGED_CRYPT_SIGN_MESSAGE_PARA;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+import com.sun.unijna.win32.W32APIOptions;
 
-import static com.sun.jna.platform.win32.WinCrypt.CERT_QUERY_CONTENT_FLAG_ALL;
-import static com.sun.jna.platform.win32.WinCrypt.CERT_QUERY_CONTENT_FLAG_PFX_AND_LOAD;
-import static com.sun.jna.platform.win32.WinCrypt.CERT_QUERY_FORMAT_FLAG_ALL;
-import static com.sun.jna.platform.win32.WinCrypt.CERT_QUERY_OBJECT_FILE;
-import static com.sun.jna.platform.win32.WinCrypt.PKCS_7_ASN_ENCODING;
-import static com.sun.jna.platform.win32.WinCrypt.X509_ASN_ENCODING;
-
-import com.sun.jna.platform.win32.WinCryptUtil.MANAGED_CRYPT_SIGN_MESSAGE_PARA;
-import com.sun.jna.win32.W32APIOptions;
-
+import static com.sun.unijna.platform.win32.WinCrypt.CERT_QUERY_CONTENT_FLAG_ALL;
+import static com.sun.unijna.platform.win32.WinCrypt.CERT_QUERY_CONTENT_FLAG_PFX_AND_LOAD;
+import static com.sun.unijna.platform.win32.WinCrypt.CERT_QUERY_FORMAT_FLAG_ALL;
+import static com.sun.unijna.platform.win32.WinCrypt.CERT_QUERY_OBJECT_FILE;
+import static com.sun.unijna.platform.win32.WinCrypt.PKCS_7_ASN_ENCODING;
+import static com.sun.unijna.platform.win32.WinCrypt.X509_ASN_ENCODING;
 import static org.junit.Assert.assertArrayEquals;
 
 import java.io.ByteArrayOutputStream;

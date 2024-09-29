@@ -21,12 +21,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
-
-import com.sun.jna.LastErrorException;
+package com.sun.unijna.platform.win32;
 
 import junit.framework.TestCase;
 import org.junit.Assume;
+
+import com.sun.unijna.LastErrorException;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinError;
 
 /**
  * @author dblock[at]dblock[dot]org

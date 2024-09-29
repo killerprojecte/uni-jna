@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import static org.junit.Assert.assertArrayEquals;
 
@@ -29,18 +29,31 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.WString;
-import com.sun.jna.platform.win32.Guid.GUID;
-import com.sun.jna.platform.win32.ShellAPI.APPBARDATA;
-import com.sun.jna.platform.win32.ShellAPI.SHELLEXECUTEINFO;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.UINT_PTR;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.WString;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.KnownFolders;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.Shell32;
+import com.sun.unijna.platform.win32.ShellAPI;
+import com.sun.unijna.platform.win32.ShlObj;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.W32FileUtils;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.Guid.GUID;
+import com.sun.unijna.platform.win32.ShellAPI.APPBARDATA;
+import com.sun.unijna.platform.win32.ShellAPI.SHELLEXECUTEINFO;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.UINT_PTR;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
 
@@ -246,7 +259,7 @@ public class Shell32Test extends TestCase {
     }
 
     public void testCurrentProcessExplicitAppUserModelID() {
-        String appUserModelID = "com.sun.jna.platform.win32.Shell32Test";
+        String appUserModelID = "com.sun.unijna.platform.win32.Shell32Test";
 
         HRESULT r1 = Shell32.INSTANCE.SetCurrentProcessExplicitAppUserModelID(new WString(appUserModelID));
         assertEquals(WinError.S_OK, r1);

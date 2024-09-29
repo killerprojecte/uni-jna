@@ -21,13 +21,14 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix.solaris;
+package com.sun.unijna.platform.unix.solaris;
 
-import com.sun.jna.Platform;
-import com.sun.jna.platform.unix.solaris.Kstat2.Kstat2Handle;
-import com.sun.jna.platform.unix.solaris.Kstat2.Kstat2Map;
-import com.sun.jna.platform.unix.solaris.Kstat2.Kstat2MatcherList;
-import com.sun.jna.platform.unix.solaris.Kstat2.Kstat2NV;
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.unix.solaris.Kstat2;
+import com.sun.unijna.platform.unix.solaris.Kstat2.Kstat2Handle;
+import com.sun.unijna.platform.unix.solaris.Kstat2.Kstat2Map;
+import com.sun.unijna.platform.unix.solaris.Kstat2.Kstat2MatcherList;
+import com.sun.unijna.platform.unix.solaris.Kstat2.Kstat2NV;
 
 import junit.framework.TestCase;
 

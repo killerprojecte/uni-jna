@@ -21,10 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.ptr.IntByReference;
 import org.junit.Test;
+
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.Secur32;
+import com.sun.unijna.platform.win32.Sspi;
+import com.sun.unijna.platform.win32.SspiUtil;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.ptr.IntByReference;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;

@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.File;
 import java.lang.ref.Reference;
@@ -34,6 +34,9 @@ import java.util.Properties;
 
 import junit.framework.TestCase;
 import org.junit.Assume;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
 
 /** Test loading and unloading native support from various locations.  Note
  * that no JNI classes are directly referenced in these tests.
@@ -82,7 +85,7 @@ public class JNALoadTest extends TestCase implements Paths {
         if(Platform.isAIX()) {
             name = name.replaceAll(".so$", ".a");
         }
-        File lib = new File(CLASSES + "/com/sun/jna/" + osPrefix + "/" + name);
+        File lib = new File(CLASSES + "/com/sun/unijna/" + osPrefix + "/" + name);
         if (!lib.exists()) {
             throw new Error("Expected JNA library at " + lib + " is missing");
         }
@@ -91,9 +94,9 @@ public class JNALoadTest extends TestCase implements Paths {
     public void testAvoidJarUnpacking() throws Exception {
         System.setProperty("jna.nounpack", "true");
         try {
-            Class<?> cls = Class.forName("com.sun.jna.Native", true, new TestLoader(true));
+            Class<?> cls = Class.forName("com.sun.unijna.Native", true, new TestLoader(true));
 
-            fail("Class com.sun.jna.Native should not be loadable if jna.nounpack=true: "
+            fail("Class com.sun.unijna.Native should not be loadable if jna.nounpack=true: "
                  + cls.getClassLoader());
         }
         catch(UnsatisfiedLinkError e) {
@@ -106,9 +109,9 @@ public class JNALoadTest extends TestCase implements Paths {
     public void testAvoidResourcePathLoading() throws Exception {
         System.setProperty("jna.noclasspath", "true");
         try {
-            Class<?> cls = Class.forName("com.sun.jna.Native", true, new TestLoader(false));
+            Class<?> cls = Class.forName("com.sun.unijna.Native", true, new TestLoader(false));
 
-            fail("Class com.sun.jna.Native should not be loadable if jna.noclasspath=true: "
+            fail("Class com.sun.unijna.Native should not be loadable if jna.noclasspath=true: "
                  + cls.getClassLoader());
         }
         catch(UnsatisfiedLinkError e) {
@@ -125,7 +128,7 @@ public class JNALoadTest extends TestCase implements Paths {
         }
 
         ClassLoader loader = new TestLoader(true);
-        Class<?> cls = Class.forName("com.sun.jna.Native", true, loader);
+        Class<?> cls = Class.forName("com.sun.unijna.Native", true, loader);
         assertEquals("Wrong class loader", loader, cls.getClassLoader());
         assertTrue("System property jna.loaded not set", Boolean.getBoolean("jna.loaded"));
 
@@ -164,7 +167,7 @@ public class JNALoadTest extends TestCase implements Paths {
         // already loaded in another class loader
         try {
             loader = new TestLoader(true);
-            cls = Class.forName("com.sun.jna.Native", true, loader);
+            cls = Class.forName("com.sun.unijna.Native", true, loader);
         } catch(Throwable t) {
             fail("Couldn't load class again after discarding first load: " + t.getMessage());
         } finally {
@@ -182,7 +185,7 @@ public class JNALoadTest extends TestCase implements Paths {
         }
 
         ClassLoader loader = new TestLoader(false);
-        Class<?> cls = Class.forName("com.sun.jna.Native", true, loader);
+        Class<?> cls = Class.forName("com.sun.unijna.Native", true, loader);
         assertEquals("Wrong class loader", loader, cls.getClassLoader());
         assertTrue("System property jna.loaded not set", Boolean.getBoolean("jna.loaded"));
 
@@ -211,7 +214,7 @@ public class JNALoadTest extends TestCase implements Paths {
             GCWaits.gcRun();
             try {
                 loader = new TestLoader(false);
-                cls = Class.forName("com.sun.jna.Native", true, loader);
+                cls = Class.forName("com.sun.unijna.Native", true, loader);
                 break;
             }
             catch(Throwable t) {
@@ -252,7 +255,7 @@ public class JNALoadTest extends TestCase implements Paths {
             System.setProperty("jnidispatch.preserve", "true");
             System.setProperty("jna.tmpdir", unicodeDir.getAbsolutePath());
             ClassLoader loader = new TestLoader(true);
-            Class<?> cls = Class.forName("com.sun.jna.Native", true, loader);
+            Class<?> cls = Class.forName("com.sun.unijna.Native", true, loader);
             assertEquals("Wrong class loader", loader, cls.getClassLoader());
             assertTrue("System property jna.loaded not set", Boolean.getBoolean("jna.loaded"));
 

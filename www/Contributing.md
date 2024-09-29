@@ -105,7 +105,7 @@ It's a good practice to copy a mapping's documentation and to edit it to describ
 Contributing Windows Win32 API Mappings
 =======================================
 
-Windows system mappings live in the `com.sun.jna.platform.win32` namespace. There're several rules of thumb to follow for mapping Win32 functions.
+Windows system mappings live in the `com.sun.unijna.platform.win32` namespace. There're several rules of thumb to follow for mapping Win32 functions.
 
 DLL functions are mapped into Unicode interfaces of the same name, like this
 

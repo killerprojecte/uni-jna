@@ -21,24 +21,28 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-// package com.sun.jna.platform.win32;
-package com.sun.jna.platform.win32;
+// package com.sun.unijna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinPerf.PERF_COUNTER_BLOCK;
-import com.sun.jna.platform.win32.WinPerf.PERF_COUNTER_DEFINITION;
-import com.sun.jna.platform.win32.WinPerf.PERF_DATA_BLOCK;
-import com.sun.jna.platform.win32.WinPerf.PERF_INSTANCE_DEFINITION;
-import com.sun.jna.platform.win32.WinPerf.PERF_OBJECT_TYPE;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.Pdh;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinReg;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinPerf.PERF_COUNTER_BLOCK;
+import com.sun.unijna.platform.win32.WinPerf.PERF_COUNTER_DEFINITION;
+import com.sun.unijna.platform.win32.WinPerf.PERF_DATA_BLOCK;
+import com.sun.unijna.platform.win32.WinPerf.PERF_INSTANCE_DEFINITION;
+import com.sun.unijna.platform.win32.WinPerf.PERF_OBJECT_TYPE;
+import com.sun.unijna.ptr.IntByReference;
 
 /**
  * Tests structures in WinPerf

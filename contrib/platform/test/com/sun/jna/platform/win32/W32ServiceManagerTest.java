@@ -22,15 +22,23 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import static com.sun.jna.platform.win32.WinNT.SERVICE_WIN32;
-import com.sun.jna.platform.win32.Winsvc.ENUM_SERVICE_STATUS_PROCESS;
-import static com.sun.jna.platform.win32.Winsvc.SC_MANAGER_CONNECT;
-import static com.sun.jna.platform.win32.Winsvc.SC_MANAGER_ENUMERATE_SERVICE;
-import static com.sun.jna.platform.win32.Winsvc.SERVICE_STATE_ALL;
+import static com.sun.unijna.platform.win32.WinNT.SERVICE_WIN32;
+import static com.sun.unijna.platform.win32.Winsvc.SC_MANAGER_CONNECT;
+import static com.sun.unijna.platform.win32.Winsvc.SC_MANAGER_ENUMERATE_SERVICE;
+import static com.sun.unijna.platform.win32.Winsvc.SERVICE_STATE_ALL;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import com.sun.unijna.platform.win32.VersionHelpers;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.W32ServiceManager;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.Winsvc;
+import com.sun.unijna.platform.win32.Winsvc.ENUM_SERVICE_STATUS_PROCESS;
+
 import junit.framework.TestCase;
 
 public class W32ServiceManagerTest extends TestCase {

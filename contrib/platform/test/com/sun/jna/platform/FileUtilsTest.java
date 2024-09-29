@@ -21,11 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform;
+package com.sun.unijna.platform;
 
-import com.sun.jna.Platform;
 import java.io.File;
 import java.io.IOException;
+
+import com.sun.unijna.Platform;
+import com.sun.unijna.platform.FileUtils;
 
 import junit.framework.TestCase;
 

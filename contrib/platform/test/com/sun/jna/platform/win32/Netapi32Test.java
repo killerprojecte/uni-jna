@@ -21,27 +21,42 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.File;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.DsGetDC.DS_DOMAIN_TRUSTS;
-import com.sun.jna.platform.win32.DsGetDC.PDOMAIN_CONTROLLER_INFO;
-import com.sun.jna.platform.win32.LMAccess.GROUP_INFO_2;
-import com.sun.jna.platform.win32.LMAccess.GROUP_USERS_INFO_0;
-import com.sun.jna.platform.win32.LMAccess.LOCALGROUP_USERS_INFO_0;
-import com.sun.jna.platform.win32.LMAccess.USER_INFO_1;
-import com.sun.jna.platform.win32.LMShare.SHARE_INFO_2;
-import com.sun.jna.platform.win32.LMShare.SHARE_INFO_502;
-import com.sun.jna.platform.win32.NTSecApi.LSA_FOREST_TRUST_RECORD;
-import com.sun.jna.platform.win32.NTSecApi.PLSA_FOREST_TRUST_INFORMATION;
-import com.sun.jna.platform.win32.NTSecApi.PLSA_FOREST_TRUST_RECORD;
-import com.sun.jna.platform.win32.Netapi32.SESSION_INFO_10;
-import com.sun.jna.platform.win32.Netapi32Util.User;
-import com.sun.jna.platform.win32.Secur32.EXTENDED_NAME_FORMAT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.DsGetDC;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.LMAccess;
+import com.sun.unijna.platform.win32.LMCons;
+import com.sun.unijna.platform.win32.LMErr;
+import com.sun.unijna.platform.win32.LMJoin;
+import com.sun.unijna.platform.win32.LMShare;
+import com.sun.unijna.platform.win32.NTSecApi;
+import com.sun.unijna.platform.win32.Netapi32;
+import com.sun.unijna.platform.win32.Netapi32Util;
+import com.sun.unijna.platform.win32.Ole32Util;
+import com.sun.unijna.platform.win32.Secur32Util;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.DsGetDC.DS_DOMAIN_TRUSTS;
+import com.sun.unijna.platform.win32.DsGetDC.PDOMAIN_CONTROLLER_INFO;
+import com.sun.unijna.platform.win32.LMAccess.GROUP_INFO_2;
+import com.sun.unijna.platform.win32.LMAccess.GROUP_USERS_INFO_0;
+import com.sun.unijna.platform.win32.LMAccess.LOCALGROUP_USERS_INFO_0;
+import com.sun.unijna.platform.win32.LMAccess.USER_INFO_1;
+import com.sun.unijna.platform.win32.LMShare.SHARE_INFO_2;
+import com.sun.unijna.platform.win32.LMShare.SHARE_INFO_502;
+import com.sun.unijna.platform.win32.NTSecApi.LSA_FOREST_TRUST_RECORD;
+import com.sun.unijna.platform.win32.NTSecApi.PLSA_FOREST_TRUST_INFORMATION;
+import com.sun.unijna.platform.win32.NTSecApi.PLSA_FOREST_TRUST_RECORD;
+import com.sun.unijna.platform.win32.Netapi32.SESSION_INFO_10;
+import com.sun.unijna.platform.win32.Netapi32Util.User;
+import com.sun.unijna.platform.win32.Secur32.EXTENDED_NAME_FORMAT;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
 

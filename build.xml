@@ -104,9 +104,9 @@
 
   <target name="-prepare-anttools">
       <subant antfile="build-ant-tools.xml" buildpath="${basedir}"></subant>
-      <taskdef name="BuildArmSoftFloatDetector" classname="com.sun.jna.BuildArmSoftFloatDetector" classpath="${build}/ant-tools:$lib/asm-8.0.1.jar" />
-      <taskdef name="CalcAndroidVersion" classname="com.sun.jna.ant.CalcAndroidVersion" classpath="${build}/ant-tools:lib/asm-8.0.1.jar" />
-      <taskdef name="ModuleGenerator" classname="com.sun.jna.ant.ModuleGenerator" classpath="${build}/ant-tools:lib/asm-8.0.1.jar" />
+      <taskdef name="BuildArmSoftFloatDetector" classname="com.sun.unijna.BuildArmSoftFloatDetector" classpath="${build}/ant-tools:$lib/asm-8.0.1.jar" />
+      <taskdef name="CalcAndroidVersion" classname="com.sun.unijna.ant.CalcAndroidVersion" classpath="${build}/ant-tools:lib/asm-8.0.1.jar" />
+      <taskdef name="ModuleGenerator" classname="com.sun.unijna.ant.ModuleGenerator" classpath="${build}/ant-tools:lib/asm-8.0.1.jar" />
   </target>
 
   <target name="-dynamic-properties" depends="-prepare-anttools">
@@ -240,16 +240,16 @@
           description="Compile all Java source">
 
     <delete dir="${build}/jna-src" />
-    <mkdir dir="${build}/jna-src/com/sun/jna" />
+    <mkdir dir="${build}/jna-src/com/sun/unijna" />
 
-    <copy file="src/com/sun/jna/Version.java" todir="${build}/jna-src/com/sun/jna" />
+    <copy file="src/com/sun/unijna/Version.java" todir="${build}/jna-src/com/sun/unijna" />
 
     <replaceregexp match='VERSION = ".*";'
                    replace='VERSION = "${jna.version}";'
-                   file="${build}/jna-src/com/sun/jna/Version.java"/>
+                   file="${build}/jna-src/com/sun/unijna/Version.java"/>
     <replaceregexp match='VERSION_NATIVE = ".*";'
                    replace='VERSION_NATIVE = "${jni.version}";'
-                   file="${build}/jna-src/com/sun/jna/Version.java"/>
+                   file="${build}/jna-src/com/sun/unijna/Version.java"/>
 
     <javac release="${javac.release}"
            destdir="${classes}"
@@ -258,7 +258,7 @@
            debug="${debug}"
            encoding="UTF-8"
            nativeheaderdir="${build.headers}">
-      <src location="${build}/jna-src/com/sun/jna" />
+      <src location="${build}/jna-src/com/sun/unijna" />
     </javac>
     <javac release="${javac.release}"
            destdir="${classes}"
@@ -268,7 +268,7 @@
            encoding="UTF-8"
            nativeheaderdir="${build.headers}">
       <src refid="src.path"/>
-      <exclude name="com/sun/jna/Version.java" />
+      <exclude name="com/sun/unijna/Version.java" />
     </javac>
   </target>
 
@@ -276,8 +276,8 @@
     <uptodate property="-jar" targetfile="${build}/${jar}">
       <srcfiles dir="${classes}">
         <patternset id="jar-compiled">
-          <include name="com/sun/jna/*"/>
-          <include name="com/sun/jna/**/*"/>
+          <include name="com/sun/unijna/*"/>
+          <include name="com/sun/unijna/**/*"/>
         </patternset>
       </srcfiles>
     </uptodate>
@@ -292,7 +292,7 @@
       <attribute name="module-info" default="false" />
       <sequential>
           <manifest file="@{target}" mode="replace">
-              <attribute name="Main-Class" value="com.sun.jna.Native"/>
+              <attribute name="Main-Class" value="com.sun.unijna.Native"/>
               <attribute name="Manifest-Version" value="1.0"/>
               <attribute name="Implementation-Title" value="${impl.title}"/>
               <attribute name="Implementation-Vendor" value="${vendor}"/>
@@ -308,7 +308,7 @@
               <attribute name="Bundle-ManifestVersion" value="2"/>
               <attribute name="Bundle-Name" value="jna"/>
               <attribute name="Bundle-Description" value="JNA Library"/>
-              <attribute name="Bundle-SymbolicName" value="com.sun.jna"/>
+              <attribute name="Bundle-SymbolicName" value="com.sun.unijna"/>
               <attribute name="Bundle-Version" value="${jna.major}.${jna.minor}.${jna.revision}"/>
               <attribute name="Bundle-RequiredExecutionEnvironment" value="JavaSE-1.6"/>
               <attribute name="Bundle-Vendor" value="${vendor}"/>
@@ -320,99 +320,99 @@
               shell script needs to be updated as well.
               -->
               <attribute name="Export-Package" value="
-com.sun.jna;version=&quot;${osgi.version}&quot;,
-com.sun.jna.ptr;version=&quot;${osgi.version}&quot;;uses:=&quot;com.sun.jna&quot;,
-com.sun.jna.win32;version=&quot;${osgi.version}&quot;;uses:=&quot;com.sun.jna&quot;
+com.sun.unijna;version=&quot;${osgi.version}&quot;,
+com.sun.unijna.ptr;version=&quot;${osgi.version}&quot;;uses:=&quot;com.sun.unijna&quot;,
+com.sun.unijna.win32;version=&quot;${osgi.version}&quot;;uses:=&quot;com.sun.unijna&quot;
 "/>
               <!-- Note that no terminal "*" is included in this list,
                  which will force failure on unsupported platforms.
               -->
               <attribute name="Bundle-NativeCode"
                          value="
-com/sun/jna/win32-x86/jnidispatch.dll;
+com/sun/unijna/win32-x86/jnidispatch.dll;
 processor=x86;osname=win32,
-com/sun/jna/win32-x86-64/jnidispatch.dll;
+com/sun/unijna/win32-x86-64/jnidispatch.dll;
 processor=x86-64;osname=win32,
-com/sun/jna/win32-aarch64/jnidispatch.dll;
+com/sun/unijna/win32-aarch64/jnidispatch.dll;
 processor=aarch64;osname=win32,
-com/sun/jna/win32-x86/jnidispatch.dll;
+com/sun/unijna/win32-x86/jnidispatch.dll;
 processor=x86;osname=win,
-com/sun/jna/win32-x86-64/jnidispatch.dll;
+com/sun/unijna/win32-x86-64/jnidispatch.dll;
 processor=x86-64;osname=win,
-com/sun/jna/win32-aarch64/jnidispatch.dll;
+com/sun/unijna/win32-aarch64/jnidispatch.dll;
 processor=aarch64;osname=win,
-com/sun/jna/w32ce-arm/jnidispatch.dll;
+com/sun/unijna/w32ce-arm/jnidispatch.dll;
 processor=arm;osname=wince,
 
-com/sun/jna/sunos-x86/libjnidispatch.so;
+com/sun/unijna/sunos-x86/libjnidispatch.so;
 processor=x86;osname=sunos,
-com/sun/jna/sunos-x86-64/libjnidispatch.so;
+com/sun/unijna/sunos-x86-64/libjnidispatch.so;
 processor=x86-64;osname=sunos,
-com/sun/jna/sunos-sparc/libjnidispatch.so;
+com/sun/unijna/sunos-sparc/libjnidispatch.so;
 processor=sparc;osname=sunos,
-com/sun/jna/sunos-sparcv9/libjnidispatch.so;
+com/sun/unijna/sunos-sparcv9/libjnidispatch.so;
 processor=sparcv9;osname=sunos,
 
-com/sun/jna/aix-ppc/libjnidispatch.a;
+com/sun/unijna/aix-ppc/libjnidispatch.a;
 processor=ppc;osname=aix,
-com/sun/jna/aix-ppc64/libjnidispatch.a;
+com/sun/unijna/aix-ppc64/libjnidispatch.a;
 processor=ppc64;osname=aix,
 
-com/sun/jna/linux-ppc/libjnidispatch.so;
+com/sun/unijna/linux-ppc/libjnidispatch.so;
 processor=ppc;osname=linux,
-com/sun/jna/linux-ppc64/libjnidispatch.so;
+com/sun/unijna/linux-ppc64/libjnidispatch.so;
 processor=ppc64;osname=linux,
-com/sun/jna/linux-ppc64le/libjnidispatch.so;
+com/sun/unijna/linux-ppc64le/libjnidispatch.so;
 processor=ppc64le;osname=linux,
-com/sun/jna/linux-x86/libjnidispatch.so;
+com/sun/unijna/linux-x86/libjnidispatch.so;
 processor=x86;osname=linux,
-com/sun/jna/linux-x86-64/libjnidispatch.so;
+com/sun/unijna/linux-x86-64/libjnidispatch.so;
 processor=x86-64;osname=linux,
-com/sun/jna/linux-arm/libjnidispatch.so;
+com/sun/unijna/linux-arm/libjnidispatch.so;
 processor=arm;osname=linux,
-com/sun/jna/linux-arm/libjnidispatch.so;
+com/sun/unijna/linux-arm/libjnidispatch.so;
 processor=arm_le;osname=linux,
-com/sun/jna/linux-armel/libjnidispatch.so;
+com/sun/unijna/linux-armel/libjnidispatch.so;
 processor=armel;osname=linux,
-com/sun/jna/linux-aarch64/libjnidispatch.so;
+com/sun/unijna/linux-aarch64/libjnidispatch.so;
 processor=aarch64;osname=linux,
-com/sun/jna/linux-ia64/libjnidispatch.so;
+com/sun/unijna/linux-ia64/libjnidispatch.so;
 processor=ia64;osname=linux,
-com/sun/jna/linux-sparcv9/libjnidispatch.so;
+com/sun/unijna/linux-sparcv9/libjnidispatch.so;
 processor=sparcv9;osname=linux,
-com/sun/jna/linux-mips64el/libjnidispatch.so;
+com/sun/unijna/linux-mips64el/libjnidispatch.so;
 processor=mips64el;osname=linux,
-com/sun/jna/linux-s390x/libjnidispatch.so;
+com/sun/unijna/linux-s390x/libjnidispatch.so;
 processor=S390x;osname=linux,
-com/sun/jna/linux-loongarch64/libjnidispatch.so;
+com/sun/unijna/linux-loongarch64/libjnidispatch.so;
 processor=loongarch64;osname=linux,
-com/sun/jna/linux-riscv64/libjnidispatch.so;
+com/sun/unijna/linux-riscv64/libjnidispatch.so;
 processor=riscv64;osname=linux,
 
-com/sun/jna/dragonflybsd-x86-64/libjnidispatch.so;
+com/sun/unijna/dragonflybsd-x86-64/libjnidispatch.so;
 processor=x86-64;osname=dragonflybsd,
 
-com/sun/jna/freebsd-x86/libjnidispatch.so;
+com/sun/unijna/freebsd-x86/libjnidispatch.so;
 processor=x86;osname=freebsd,
-com/sun/jna/freebsd-x86-64/libjnidispatch.so;
+com/sun/unijna/freebsd-x86-64/libjnidispatch.so;
 processor=x86-64;osname=freebsd,
-com/sun/jna/freebsd-aarch64/libjnidispatch.so;
+com/sun/unijna/freebsd-aarch64/libjnidispatch.so;
 processor=aarch64;osname=freebsd,
 
-com/sun/jna/openbsd-x86/libjnidispatch.so;
+com/sun/unijna/openbsd-x86/libjnidispatch.so;
 processor=x86;osname=openbsd,
-com/sun/jna/openbsd-x86-64/libjnidispatch.so;
+com/sun/unijna/openbsd-x86-64/libjnidispatch.so;
 processor=x86-64;osname=openbsd,
 
-com/sun/jna/darwin-ppc/libjnidispatch.jnilib;
+com/sun/unijna/darwin-ppc/libjnidispatch.jnilib;
 osname=macosx;processor=ppc,
-com/sun/jna/darwin-ppc64/libjnidispatch.jnilib;
+com/sun/unijna/darwin-ppc64/libjnidispatch.jnilib;
 osname=macosx;processor=ppc64,
-com/sun/jna/darwin-x86/libjnidispatch.jnilib;
+com/sun/unijna/darwin-x86/libjnidispatch.jnilib;
 osname=macosx;processor=x86,
-com/sun/jna/darwin-x86-64/libjnidispatch.jnilib;
+com/sun/unijna/darwin-x86-64/libjnidispatch.jnilib;
 osname=macosx;processor=x86-64,
-com/sun/jna/darwin-aarch64/libjnidispatch.jnilib;
+com/sun/unijna/darwin-aarch64/libjnidispatch.jnilib;
 osname=macosx;processor=aarch64
 "/>
           </manifest>
@@ -420,7 +420,7 @@ osname=macosx;processor=aarch64
               <attribute name="Multi-Release" value="true"/>
           </manifest>
           <manifest file="@{target}" mode="update" unless:true="@{module-info}">
-              <attribute name="Automatic-Module-Name" value="com.sun.jna"/>
+              <attribute name="Automatic-Module-Name" value="com.sun.unijna"/>
           </manifest>
       </sequential>
   </macrodef>
@@ -430,14 +430,14 @@ osname=macosx;processor=aarch64
     <build-manifest target="${build}/manifest/automatic.mf" module-info="false"/>
     <ModuleGenerator
         targetFile="${build}/manifest/module-info.class"
-        name="com.sun.jna"
+        name="com.sun.unijna"
         version="${jna.major}.${jna.minor}.${jna.revision}"
         open="false"
     >
-        <exports package="com.sun.jna" />
-        <exports package="com.sun.jna.ptr" />
-        <exports package="com.sun.jna.win32" />
-        <exports package="com.sun.jna.internal" to="com.sun.jna.platform"/>
+        <exports package="com.sun.unijna" />
+        <exports package="com.sun.unijna.ptr" />
+        <exports package="com.sun.unijna.win32" />
+        <exports package="com.sun.unijna.internal" to="com.sun.unijna.platform"/>
         <requires module="java.logging" />
         <requires module="java.desktop" />
     </ModuleGenerator>
@@ -447,109 +447,109 @@ osname=macosx;processor=aarch64
       </fileset>
       <zipfileset src="${lib.native}/win32-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/win32-x86"/>
+                  prefix="com/sun/unijna/win32-x86"/>
       <zipfileset src="${lib.native}/aix-ppc.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/aix-ppc"/>
+                  prefix="com/sun/unijna/aix-ppc"/>
       <zipfileset src="${lib.native}/aix-ppc64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/aix-ppc64"/>
+                  prefix="com/sun/unijna/aix-ppc64"/>
       <zipfileset src="${lib.native}/darwin-ppc.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/darwin-ppc"/>
+                  prefix="com/sun/unijna/darwin-ppc"/>
       <zipfileset src="${lib.native}/darwin-ppc64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/darwin-ppc64"/>
+                  prefix="com/sun/unijna/darwin-ppc64"/>
       <zipfileset src="${lib.native}/darwin-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/darwin-x86"/>
+                  prefix="com/sun/unijna/darwin-x86"/>
       <zipfileset src="${lib.native}/darwin-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/darwin-x86-64"/>
+                  prefix="com/sun/unijna/darwin-x86-64"/>
       <zipfileset src="${lib.native}/darwin-aarch64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/darwin-aarch64"/>
+                  prefix="com/sun/unijna/darwin-aarch64"/>
       <zipfileset src="${lib.native}/linux-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-x86"/>
+                  prefix="com/sun/unijna/linux-x86"/>
       <zipfileset src="${lib.native}/linux-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-x86-64"/>
+                  prefix="com/sun/unijna/linux-x86-64"/>
       <zipfileset src="${lib.native}/linux-arm.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-arm"/>
+                  prefix="com/sun/unijna/linux-arm"/>
       <zipfileset src="${lib.native}/linux-armel.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-armel"/>
+                  prefix="com/sun/unijna/linux-armel"/>
       <zipfileset src="${lib.native}/linux-aarch64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-aarch64"/>
+                  prefix="com/sun/unijna/linux-aarch64"/>
       <zipfileset src="${lib.native}/linux-ia64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-ia64"/>
+                  prefix="com/sun/unijna/linux-ia64"/>
       <zipfileset src="${lib.native}/linux-ppc.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-ppc"/>
+                  prefix="com/sun/unijna/linux-ppc"/>
       <zipfileset src="${lib.native}/linux-ppc64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-ppc64"/>
+                  prefix="com/sun/unijna/linux-ppc64"/>
       <zipfileset src="${lib.native}/linux-ppc64le.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-ppc64le"/>
+                  prefix="com/sun/unijna/linux-ppc64le"/>
       <zipfileset src="${lib.native}/linux-sparcv9.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-sparcv9"/>
+                  prefix="com/sun/unijna/linux-sparcv9"/>
       <zipfileset src="${lib.native}/linux-mips64el.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-mips64el"/>
+                  prefix="com/sun/unijna/linux-mips64el"/>
       <zipfileset src="${lib.native}/linux-loongarch64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-loongarch64"/>
+                  prefix="com/sun/unijna/linux-loongarch64"/>
       <zipfileset src="${lib.native}/linux-s390x.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-s390x"/>
+                  prefix="com/sun/unijna/linux-s390x"/>
       <zipfileset src="${lib.native}/linux-riscv64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/linux-riscv64"/>
+                  prefix="com/sun/unijna/linux-riscv64"/>
       <zipfileset src="${lib.native}/sunos-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/sunos-x86"/>
+                  prefix="com/sun/unijna/sunos-x86"/>
       <zipfileset src="${lib.native}/sunos-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/sunos-x86-64"/>
+                  prefix="com/sun/unijna/sunos-x86-64"/>
       <zipfileset src="${lib.native}/sunos-sparc.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/sunos-sparc"/>
+                  prefix="com/sun/unijna/sunos-sparc"/>
       <zipfileset src="${lib.native}/sunos-sparcv9.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/sunos-sparcv9"/>
+                  prefix="com/sun/unijna/sunos-sparcv9"/>
       <zipfileset src="${lib.native}/dragonflybsd-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/dragonflybsd-x86-64"/>
+                  prefix="com/sun/unijna/dragonflybsd-x86-64"/>
       <zipfileset src="${lib.native}/freebsd-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/freebsd-x86"/>
+                  prefix="com/sun/unijna/freebsd-x86"/>
       <zipfileset src="${lib.native}/freebsd-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/freebsd-x86-64"/>
+                  prefix="com/sun/unijna/freebsd-x86-64"/>
       <zipfileset src="${lib.native}/freebsd-aarch64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/freebsd-aarch64"/>
+                  prefix="com/sun/unijna/freebsd-aarch64"/>
       <zipfileset src="${lib.native}/openbsd-x86.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/openbsd-x86"/>
+                  prefix="com/sun/unijna/openbsd-x86"/>
       <zipfileset src="${lib.native}/openbsd-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/openbsd-x86-64"/>
+                  prefix="com/sun/unijna/openbsd-x86-64"/>
       <zipfileset src="${lib.native}/win32-x86-64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/win32-x86-64"/>
+                  prefix="com/sun/unijna/win32-x86-64"/>
       <zipfileset src="${lib.native}/win32-aarch64.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/win32-aarch64"/>
+                  prefix="com/sun/unijna/win32-aarch64"/>
       <zipfileset src="${lib.native}/w32ce-arm.jar"
                   includes="*jnidispatch*"
-                  prefix="com/sun/jna/w32ce-arm"/>
+                  prefix="com/sun/unijna/w32ce-arm"/>
       <zipfileset dir="."
                   includes="LICENSE,LGPL2.1,AL2.0"
                   prefix="META-INF"/>
@@ -576,7 +576,7 @@ osname=macosx;processor=aarch64
 </echo>
     <echo file="${build.aar}/AndroidManifest.xml"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sun.jna"
+    package="com.sun.unijna"
     android:versionCode="]]>${android.versionCode}<![CDATA["
     android:versionName="]]>${jna.version}<![CDATA[" >
 
@@ -921,7 +921,7 @@ osname=macosx;processor=aarch64
       <isset property="EXTRA_MAKE_OPTS"/>
     </condition>
     <!-- Native resource path within jna.jar -->
-    <property name="native.path" value="com/sun/jna/${resource.prefix}"/>
+    <property name="native.path" value="com/sun/unijna/${resource.prefix}"/>
 
     <!-- Default make program -->
     <property name="make" value="make"/>
@@ -1213,7 +1213,7 @@ cd ..
       </and>
     </condition>
     <property name="tests.platform" value=""/>
-    <property name="tests.include" value="com/sun/jna/*Test.java com/sun/jna/different_package/*Test.java"/>
+    <property name="tests.include" value="com/sun/unijna/*Test.java com/sun/unijna/different_package/*Test.java"/>
     <property name="tests.exclude" value=""/>
     <property name="tests.exclude-patterns" value=""/>
     <condition property="java.awt.headless" value="true">
@@ -1308,8 +1308,8 @@ cd ..
              sourcepathref="javadoc.src.path"
              classpathref="javadoc.compile.path"
              maxmemory="256m"
-             packagenames="com.sun.jna,com.sun.jna.ptr,com.sun.jna.types,com.sun.jna.platform,com.sun.jna.platform.win32"
-             overview="${src}/com/sun/jna/overview.html"
+             packagenames="com.sun.unijna,com.sun.unijna.ptr,com.sun.unijna.types,com.sun.unijna.platform,com.sun.unijna.platform.win32"
+             overview="${src}/com/sun/unijna/overview.html"
              additionalparam="${javadoc.opts}"
              destdir="${javadoc}">
       <!-- stylesheetfile="${stylesheet}" -->
@@ -1320,18 +1320,18 @@ cd ..
 
       <packageset dir="${src}" defaultexcludes="yes">
         <patternset>
-          <include name="com/sun/jna/**/*"/>
+          <include name="com/sun/unijna/**/*"/>
         </patternset>
       </packageset>
       <packageset dir="${platform.src}" defaultexcludes="yes">
         <patternset>
-          <include name="com/sun/jna/platform/**/*"/>
+          <include name="com/sun/unijna/platform/**/*"/>
         </patternset>
       </packageset>
 
-      <group title="Java Native Access" packages="com.sun.jna,com.sun.jna.ptr,com.sun.jna.types,com.sun.jna.win32"/>
-      <group title="Platform Utilities" packages="com.sun.jna.platform,com.sun.jna.platform.dnd"/>
-      <group title="Platform Specific" packages="com.sun.jna.platform.*"/>
+      <group title="Java Native Access" packages="com.sun.unijna,com.sun.unijna.ptr,com.sun.unijna.types,com.sun.unijna.win32"/>
+      <group title="Platform Utilities" packages="com.sun.unijna.platform,com.sun.unijna.platform.dnd"/>
+      <group title="Platform Specific" packages="com.sun.unijna.platform.*"/>
 
       <arg value="-notimestamp"/>
     </javadoc>

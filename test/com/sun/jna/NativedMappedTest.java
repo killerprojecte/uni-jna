@@ -21,10 +21,17 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import junit.framework.TestCase;
 import static junit.framework.TestCase.assertEquals;
+
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeMapped;
+import com.sun.unijna.NativeMappedConverter;
+import com.sun.unijna.Structure;
 
 public class NativedMappedTest extends TestCase {
 

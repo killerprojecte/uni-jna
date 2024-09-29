@@ -20,23 +20,22 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-/*
- * @author L W Ahonen, lwahonen@iki.fi
- */
-
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.Guid;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.ShTypes.STRRET;
-import com.sun.jna.platform.win32.Shell32;
-import com.sun.jna.platform.win32.ShlObj;
-import com.sun.jna.platform.win32.Shlwapi;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.Shell32;
+import com.sun.unijna.platform.win32.ShlObj;
+import com.sun.unijna.platform.win32.Shlwapi;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.IEnumIDList;
+import com.sun.unijna.platform.win32.COM.IShellFolder;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.ShTypes.STRRET;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
 

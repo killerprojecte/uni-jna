@@ -21,40 +21,41 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.mac;
+package com.sun.unijna.platform.mac;
 
+import static com.sun.unijna.platform.unix.LibCAPI.size_t;
 import static org.junit.Assert.assertNotEquals;
 
 import java.util.Date;
 import java.util.Map;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.mac.SystemB.Group;
-import com.sun.jna.platform.mac.SystemB.HostCpuLoadInfo;
-import com.sun.jna.platform.mac.SystemB.HostLoadInfo;
-import com.sun.jna.platform.mac.SystemB.IFmsgHdr;
-import com.sun.jna.platform.mac.SystemB.IFmsgHdr2;
-import com.sun.jna.platform.mac.SystemB.Passwd;
-import com.sun.jna.platform.mac.SystemB.ProcTaskAllInfo;
-import com.sun.jna.platform.mac.SystemB.RUsageInfoV2;
-import com.sun.jna.platform.mac.SystemB.Statfs;
-import com.sun.jna.platform.mac.SystemB.Timeval;
-import com.sun.jna.platform.mac.SystemB.Timezone;
-import com.sun.jna.platform.mac.SystemB.VMMeter;
-import com.sun.jna.platform.mac.SystemB.VMStatistics;
-import com.sun.jna.platform.mac.SystemB.VMStatistics64;
-import com.sun.jna.platform.mac.SystemB.VnodeInfoPath;
-import com.sun.jna.platform.mac.SystemB.VnodePathInfo;
-import com.sun.jna.platform.mac.SystemB.XswUsage;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.LongByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.mac.SystemB;
+import com.sun.unijna.platform.mac.SystemB.Group;
+import com.sun.unijna.platform.mac.SystemB.HostCpuLoadInfo;
+import com.sun.unijna.platform.mac.SystemB.HostLoadInfo;
+import com.sun.unijna.platform.mac.SystemB.IFmsgHdr;
+import com.sun.unijna.platform.mac.SystemB.IFmsgHdr2;
+import com.sun.unijna.platform.mac.SystemB.Passwd;
+import com.sun.unijna.platform.mac.SystemB.ProcTaskAllInfo;
+import com.sun.unijna.platform.mac.SystemB.RUsageInfoV2;
+import com.sun.unijna.platform.mac.SystemB.Statfs;
+import com.sun.unijna.platform.mac.SystemB.Timeval;
+import com.sun.unijna.platform.mac.SystemB.Timezone;
+import com.sun.unijna.platform.mac.SystemB.VMMeter;
+import com.sun.unijna.platform.mac.SystemB.VMStatistics;
+import com.sun.unijna.platform.mac.SystemB.VMStatistics64;
+import com.sun.unijna.platform.mac.SystemB.VnodeInfoPath;
+import com.sun.unijna.platform.mac.SystemB.VnodePathInfo;
+import com.sun.unijna.platform.mac.SystemB.XswUsage;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.LongByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
-import static com.sun.jna.platform.unix.LibCAPI.size_t;
 /**
  * Exercise the {@link SystemB} class.
  */

@@ -20,7 +20,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import junit.framework.TestCase;
 
@@ -31,8 +31,12 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import com.sun.unijna.Platform;
+import com.sun.unijna.Structure;
+import com.sun.unijna.Union;
+
 /**
- * Test utility class for inspecting {@link com.sun.jna.Structure#getFieldOrder()} methods.
+ * Test utility class for inspecting {@link com.sun.unijna.Structure#getFieldOrder()} methods.
  *
  * @author Dan Rollo
  * Date: 1/17/13

@@ -20,9 +20,10 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.win32.W32APITypeMapper;
+import com.sun.unijna.platform.win32.Shlwapi;
+import com.sun.unijna.win32.W32APITypeMapper;
 
 import junit.framework.TestCase;
 

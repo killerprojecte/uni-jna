@@ -21,11 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Crypt32Util;
+import com.sun.unijna.platform.win32.WinCrypt;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.Native;
 
 /**
  * @author dblock[at]dblock[dot]org

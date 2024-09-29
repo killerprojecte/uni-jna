@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
@@ -33,7 +33,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-import com.sun.jna.Memory;
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.win32.Crypt32Util;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinCrypt;
+
 import java.lang.ref.Reference;
 import java.util.Map;
 

@@ -22,7 +22,9 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna;
+package com.sun.unijna;
+
+import com.sun.unijna.Memory;
 
 public class GCWaits {
     private GCWaits() {}

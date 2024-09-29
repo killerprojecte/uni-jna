@@ -8,7 +8,7 @@
     <property name="classes"                location="${build}/classes"/>
     <property name="jar"                    location="${build}/demo-monitordemo.jar"/>
     <property name="file.reference.jna.jar" location="../../build/jna.jar"/>
-    <property name="main-class"             value="com.sun.jna.contrib.demo.MonitorInfoDemo" />
+    <property name="main-class"             value="com.sun.unijna.contrib.demo.MonitorInfoDemo" />
     <property name="javac.target"           value="1.6" />
     <property name="javac.source"           value="1.6" />
 

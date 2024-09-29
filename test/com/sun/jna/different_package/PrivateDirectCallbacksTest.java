@@ -21,9 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.different_package;
+package com.sun.unijna.different_package;
 
-import com.sun.jna.*;
+import com.sun.unijna.Callback;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.*;
+
 import junit.framework.TestCase;
 
 public class PrivateDirectCallbacksTest extends TestCase {

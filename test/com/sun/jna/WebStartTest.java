@@ -21,11 +21,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
+
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
 
 import java.awt.GraphicsEnvironment;
 import java.io.File;
@@ -274,7 +279,7 @@ public class WebStartTest extends TestCase implements Paths {
         }
     }
 
-    public interface FolderInfo extends com.sun.jna.win32.StdCallLibrary {
+    public interface FolderInfo extends com.sun.unijna.win32.StdCallLibrary {
         int MAX_PATH = 260;
         int SHGFP_TYPE_CURRENT = 0;
         int SHGFP_TYPE_DEFAULT = 1;

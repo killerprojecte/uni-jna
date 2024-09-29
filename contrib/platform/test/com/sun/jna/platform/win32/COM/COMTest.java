@@ -21,22 +21,22 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.Guid.GUID;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.OaIdl.IDLDESC;
-import com.sun.jna.platform.win32.OaIdl.MEMBERID;
-import com.sun.jna.platform.win32.OaIdl.TYPEATTR;
-import com.sun.jna.platform.win32.OaIdl.TYPEDESC;
-import com.sun.jna.platform.win32.OaIdl.TYPEKIND;
-import com.sun.jna.platform.win32.WTypes.LPOLESTR;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.ULONG;
-import com.sun.jna.platform.win32.WinDef.WORD;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Guid.GUID;
+import com.sun.unijna.platform.win32.OaIdl.IDLDESC;
+import com.sun.unijna.platform.win32.OaIdl.MEMBERID;
+import com.sun.unijna.platform.win32.OaIdl.TYPEATTR;
+import com.sun.unijna.platform.win32.OaIdl.TYPEDESC;
+import com.sun.unijna.platform.win32.OaIdl.TYPEKIND;
+import com.sun.unijna.platform.win32.WTypes.LPOLESTR;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.ULONG;
+import com.sun.unijna.platform.win32.WinDef.WORD;
 
 /**
  * @author dblock[at]dblock[dot]org

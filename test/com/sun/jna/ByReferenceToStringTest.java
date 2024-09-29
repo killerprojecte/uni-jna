@@ -21,16 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
-import com.sun.jna.ptr.ByteByReference;
-import com.sun.jna.ptr.DoubleByReference;
-import com.sun.jna.ptr.FloatByReference;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.LongByReference;
-import com.sun.jna.ptr.NativeLongByReference;
-import com.sun.jna.ptr.PointerByReference;
-import com.sun.jna.ptr.ShortByReference;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.ptr.ByteByReference;
+import com.sun.unijna.ptr.DoubleByReference;
+import com.sun.unijna.ptr.FloatByReference;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.LongByReference;
+import com.sun.unijna.ptr.NativeLongByReference;
+import com.sun.unijna.ptr.PointerByReference;
+import com.sun.unijna.ptr.ShortByReference;
 
 import junit.framework.TestCase;
 

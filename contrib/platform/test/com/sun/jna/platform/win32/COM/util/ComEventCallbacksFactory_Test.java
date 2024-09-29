@@ -21,31 +21,40 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM.util;
+package com.sun.unijna.platform.win32.COM.util;
 
-import com.sun.jna.platform.win32.AbstractWin32TestSupport;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
-import com.sun.jna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.AbstractWin32TestSupport;
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
+import static com.sun.unijna.platform.win32.COM.IDispatch.IID_IDISPATCH;
+import static com.sun.unijna.platform.win32.COM.IUnknown.IID_IUNKNOWN;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.COM.util.annotation.ComProperty;
-import com.sun.jna.platform.win32.Guid.IID;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.util.AbstractComEventCallbackListener;
+import com.sun.unijna.platform.win32.COM.util.CallbackProxy;
+import com.sun.unijna.platform.win32.COM.util.ComThread;
+import com.sun.unijna.platform.win32.COM.util.Factory;
+import com.sun.unijna.platform.win32.COM.util.IComEventCallbackCookie;
+import com.sun.unijna.platform.win32.COM.util.IConnectionPoint;
+import com.sun.unijna.platform.win32.COM.util.IUnknown;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComProperty;
+import com.sun.unijna.platform.win32.Guid.IID;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
+
 import org.hamcrest.CoreMatchers;
 
-import static com.sun.jna.platform.win32.COM.IUnknown.IID_IUNKNOWN;
-import static com.sun.jna.platform.win32.COM.IDispatch.IID_IDISPATCH;
 import static org.junit.Assert.*;
 import org.junit.Assume;
 

@@ -2101,7 +2101,7 @@ closure_handler(ffi_cif* cif, void* resp, void** argp, void *cdata)
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokePointer
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)J
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)J
  */
 JNIEXPORT jlong JNICALL 
 Java_com_sun_jna_Native_invokePointer (JNIEnv *env, jclass UNUSED(cls),
@@ -2117,7 +2117,7 @@ Java_com_sun_jna_Native_invokePointer (JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeObject
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)Ljava/lang/Object;
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)Ljava/lang/Object;
  */
 JNIEXPORT jobject 
 JNICALL Java_com_sun_jna_Native_invokeObject(JNIEnv *env, jclass UNUSED(cls),
@@ -2133,7 +2133,7 @@ JNICALL Java_com_sun_jna_Native_invokeObject(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeStructure
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;JJ)V
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;JJ)V
  */
 JNIEXPORT void JNICALL 
 Java_com_sun_jna_Native_invokeStructure(JNIEnv *env, jclass UNUSED(cls), 
@@ -2153,7 +2153,7 @@ Java_com_sun_jna_Native_invokeStructure(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeDouble
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)D
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)D
  */
 JNIEXPORT jdouble JNICALL
 Java_com_sun_jna_Native_invokeDouble(JNIEnv *env, jclass UNUSED(cls), 
@@ -2168,7 +2168,7 @@ Java_com_sun_jna_Native_invokeDouble(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeFloat
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)F
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)F
  */
 JNIEXPORT jfloat JNICALL
 Java_com_sun_jna_Native_invokeFloat(JNIEnv *env, jclass UNUSED(cls), 
@@ -2183,7 +2183,7 @@ Java_com_sun_jna_Native_invokeFloat(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeInt
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)I
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)I
  */
 JNIEXPORT jint JNICALL
 Java_com_sun_jna_Native_invokeInt(JNIEnv *env, jclass UNUSED(cls), 
@@ -2198,7 +2198,7 @@ Java_com_sun_jna_Native_invokeInt(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeLong
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)J
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)J
  */
 JNIEXPORT jlong JNICALL
 Java_com_sun_jna_Native_invokeLong(JNIEnv *env, jclass UNUSED(cls),
@@ -2213,7 +2213,7 @@ Java_com_sun_jna_Native_invokeLong(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    invokeVoid
- * Signature: (Lcom/sun/jna/Function;JI[Ljava/lang/Object;)V
+ * Signature: (Lcom/sun/unijna/Function;JI[Ljava/lang/Object;)V
  */
 JNIEXPORT void JNICALL
 Java_com_sun_jna_Native_invokeVoid(JNIEnv *env, jclass UNUSED(cls),
@@ -2335,7 +2335,7 @@ Java_com_sun_jna_Native_findSymbol(JNIEnv *env, jclass UNUSED(cls),
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[BII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[BII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3BII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jbyteArray arr, jint off, jint n)
@@ -2348,7 +2348,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[CII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[CII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3CII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jcharArray arr, jint off, jint n)
@@ -2359,7 +2359,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[DII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[DII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3DII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jdoubleArray arr, jint off, jint n)
@@ -2372,7 +2372,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[FII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[FII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3FII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jfloatArray arr, jint off, jint n)
@@ -2385,7 +2385,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[III)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[III)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3III
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jintArray arr, jint off, jint n)
@@ -2398,7 +2398,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[JII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[JII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3JII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlongArray arr, jint off, jint n)
@@ -2411,7 +2411,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    write
- * Signature: (Lcom/sun/jna/Pointer;JJ[SII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[SII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3SII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jshortArray arr, jint off, jint n)
@@ -2424,7 +2424,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_write__Lcom_sun_jna_Pointer_2JJ_3
 /*
  * Class:     com_sun_jna_Native
  * Method:    indexOf
- * Signature: (Lcom/sun/jna/Pointer;JJB)J
+ * Signature: (Lcom/sun/unijna/Pointer;JJB)J
  */
 JNIEXPORT jlong JNICALL Java_com_sun_jna_Native_indexOf
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jbyte value)
@@ -2446,7 +2446,7 @@ JNIEXPORT jlong JNICALL Java_com_sun_jna_Native_indexOf
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[BII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[BII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3BII
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jbyteArray arr, jint off, jint n)
@@ -2459,7 +2459,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3B
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[CII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[CII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3CII
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jcharArray arr, jint off, jint n)
@@ -2470,7 +2470,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3C
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[DII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[DII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3DII
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jdoubleArray arr, jint off, jint n)
@@ -2483,7 +2483,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3D
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[FII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[FII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3FII
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jfloatArray arr, jint off, jint n)
@@ -2496,7 +2496,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3F
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[III)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[III)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3III
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jintArray arr, jint off, jint n)
@@ -2509,7 +2509,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3I
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[JII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[JII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3JII
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlongArray arr, jint off, jint n)
@@ -2522,7 +2522,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3J
 /*
  * Class:     com_sun_jna_Native
  * Method:    read
- * Signature: (Lcom/sun/jna/Pointer;JJ[SII)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJ[SII)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3SII
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jshortArray arr, jint off, jint n)
@@ -2535,7 +2535,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_read__Lcom_sun_jna_Pointer_2JJ_3S
 /*
  * Class:     com_sun_jna_Native
  * Method:    getByte
- * Signature: (Lcom/sun/jna/Pointer;JJ)B
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)B
  */
 JNIEXPORT jbyte JNICALL Java_com_sun_jna_Native_getByte
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2548,7 +2548,7 @@ JNIEXPORT jbyte JNICALL Java_com_sun_jna_Native_getByte
 /*
  * Class:     com_sun_jna_Native
  * Method:    getChar
- * Signature: (Lcom/sun/jna/Pointer;JJ)C
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)C
  */
 JNIEXPORT jchar JNICALL Java_com_sun_jna_Native_getChar
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2574,7 +2574,7 @@ JNIEXPORT jlong JNICALL Java_com_sun_jna_Native__1getPointer
 /*
  * Class:     com_sun_jna_Native
  * Method:    getDirectByteBuffer
- * Signature: (Lcom/sun/jna/Pointer;JJJ)Ljava/nio/ByteBuffer;
+ * Signature: (Lcom/sun/unijna/Pointer;JJJ)Ljava/nio/ByteBuffer;
  */
 JNIEXPORT jobject JNICALL Java_com_sun_jna_Native_getDirectByteBuffer__Lcom_sun_jna_Pointer_2JJJ
     (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlong length)
@@ -2589,7 +2589,7 @@ JNIEXPORT jobject JNICALL Java_com_sun_jna_Native_getDirectByteBuffer__Lcom_sun_
 /*
  * Class:     com_sun_jna_Native
  * Method:    getDouble
- * Signature: (Lcom/sun/jna/Pointer;JJ)D
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)D
  */
 JNIEXPORT jdouble JNICALL Java_com_sun_jna_Native_getDouble
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2602,7 +2602,7 @@ JNIEXPORT jdouble JNICALL Java_com_sun_jna_Native_getDouble
 /*
  * Class:     com_sun_jna_Native
  * Method:    getFloat
- * Signature: (Lcom/sun/jna/Pointer;JJ)F
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)F
  */
 JNIEXPORT jfloat JNICALL Java_com_sun_jna_Native_getFloat
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2615,7 +2615,7 @@ JNIEXPORT jfloat JNICALL Java_com_sun_jna_Native_getFloat
 /*
  * Class:     com_sun_jna_Native
  * Method:    getInt
- * Signature: (Lcom/sun/jna/Pointer;JJ)I
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)I
  */
 JNIEXPORT jint JNICALL Java_com_sun_jna_Native_getInt
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2628,7 +2628,7 @@ JNIEXPORT jint JNICALL Java_com_sun_jna_Native_getInt
 /*
  * Class:     com_sun_jna_Native
  * Method:    getLong
- * Signature: (Lcom/sun/jna/Pointer;JJ)J
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)J
  */
 JNIEXPORT jlong JNICALL Java_com_sun_jna_Native_getLong
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2641,7 +2641,7 @@ JNIEXPORT jlong JNICALL Java_com_sun_jna_Native_getLong
 /*
  * Class:     com_sun_jna_Native
  * Method:    getShort
- * Signature: (Lcom/sun/jna/Pointer;JJ)S
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)S
  */
 JNIEXPORT jshort JNICALL Java_com_sun_jna_Native_getShort
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2654,7 +2654,7 @@ JNIEXPORT jshort JNICALL Java_com_sun_jna_Native_getShort
 /*
  * Class:     com_sun_jna_Native
  * Method:    getWideString
- * Signature: (Lcom/sun/jna/Pointer;JJ)Ljava/lang/String;
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)Ljava/lang/String;
  */
 JNIEXPORT jstring JNICALL Java_com_sun_jna_Native_getWideString
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset)
@@ -2665,7 +2665,7 @@ JNIEXPORT jstring JNICALL Java_com_sun_jna_Native_getWideString
 /*
  * Class:     com_sun_jna_Native
  * Method:    getStringBytes
- * Signature: (Lcom/sun/jna/Pointer;JJ)[B
+ * Signature: (Lcom/sun/unijna/Pointer;JJ)[B
  */
 JNIEXPORT jbyteArray JNICALL Java_com_sun_jna_Native_getStringBytes
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong baseaddr, jlong offset)
@@ -2690,7 +2690,7 @@ JNIEXPORT jbyteArray JNICALL Java_com_sun_jna_Native_getStringBytes
 /*
  * Class:     com_sun_jna_Native
  * Method:    setMemory
- * Signature: (Lcom/sun/jna/Pointer;JJJB)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJJB)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setMemory
 (JNIEnv *UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlong count, jbyte value)
@@ -2701,7 +2701,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setMemory
 /*
  * Class:     com_sun_jna_Native
  * Method:    setByte
- * Signature: (Lcom/sun/jna/Pointer;JJB)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJB)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setByte
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jbyte value)
@@ -2712,7 +2712,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setByte
 /*
  * Class:     com_sun_jna_Native
  * Method:    setChar
- * Signature: (Lcom/sun/jna/Pointer;JJC)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJC)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setChar
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jchar value)
@@ -2724,7 +2724,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setChar
 /*
  * Class:     com_sun_jna_Native
  * Method:    setPointer
- * Signature: (Lcom/sun/jna/Pointer;JJJ)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJJ)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setPointer
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlong value)
@@ -2736,7 +2736,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setPointer
 /*
  * Class:     com_sun_jna_Native
  * Method:    setDouble
- * Signature: (Lcom/sun/jna/Pointer;JJD)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJD)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setDouble
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jdouble value)
@@ -2747,7 +2747,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setDouble
 /*
  * Class:     com_sun_jna_Native
  * Method:    setFloat
- * Signature: (Lcom/sun/jna/Pointer;JJF)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJF)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setFloat
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jfloat value)
@@ -2758,7 +2758,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setFloat
 /*
  * Class:     com_sun_jna_Native
  * Method:    setInt
- * Signature: (Lcom/sun/jna/Pointer;JJI)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJI)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setInt
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jint value)
@@ -2769,7 +2769,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setInt
 /*
  * Class:     com_sun_jna_Native
  * Method:    setLong
- * Signature: (Lcom/sun/jna/Pointer;JJJ)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJJ)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setLong
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jlong value)
@@ -2780,7 +2780,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setLong
 /*
  * Class:     com_sun_jna_Native
  * Method:    setShort
- * Signature: (Lcom/sun/jna/Pointer;JJS)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJS)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setShort
 (JNIEnv * UNUSED_ENV(env), jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jshort value)
@@ -2791,7 +2791,7 @@ JNIEXPORT void JNICALL Java_com_sun_jna_Native_setShort
 /*
  * Class:     com_sun_jna_Native
  * Method:    setWideString
- * Signature: (Lcom/sun/jna/Pointer;JJLjava/lang/String;)V
+ * Signature: (Lcom/sun/unijna/Pointer;JJLjava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_com_sun_jna_Native_setWideString
 (JNIEnv *env, jclass UNUSED(cls), jobject UNUSED(pointer), jlong addr, jlong offset, jstring value)
@@ -2855,196 +2855,196 @@ Java_com_sun_jna_Native_sizeof(JNIEnv *env, jclass UNUSED(cls), jint type)
   }
 }
 
-/** Initialize com.sun.jna classes separately from the library load to
+/** Initialize com.sun.unijna classes separately from the library load to
  * avoid initialization inconsistencies.
  */
 JNIEXPORT void JNICALL
 Java_com_sun_jna_Native_initIDs(JNIEnv *env, jclass cls) {
-  if (!LOAD_CREF(env, Pointer, "com/sun/jna/Pointer")) {
+  if (!LOAD_CREF(env, Pointer, "com/sun/unijna/Pointer")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.Pointer");
+                "Can't obtain class com.sun.unijna.Pointer");
   }
   else if (!LOAD_MID(env, MID_Pointer_init, classPointer,
                      "<init>", "(J)V")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain constructor for class com.sun.jna.Pointer");
+                "Can't obtain constructor for class com.sun.unijna.Pointer");
   }
   else if (!LOAD_FID(env, FID_Pointer_peer, classPointer, "peer", "J")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain peer field ID for class com.sun.jna.Pointer");
+                "Can't obtain peer field ID for class com.sun.unijna.Pointer");
   }
   else if (!(classNative = (*env)->NewWeakGlobalRef(env, cls))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain global reference for class com.sun.jna.Native");
+                "Can't obtain global reference for class com.sun.unijna.Native");
   }
   else if (!(MID_Native_dispose
              = (*env)->GetStaticMethodID(env, classNative,
                                          "dispose", "()V"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method dispose from class com.sun.jna.Native");
+                "Can't obtain static method dispose from class com.sun.unijna.Native");
   }
   else if (!(MID_Native_fromNativeCallbackParam
              = (*env)->GetStaticMethodID(env, classNative,
-                                         "fromNative", "(Ljava/lang/Class;Ljava/lang/Object;)Lcom/sun/jna/NativeMapped;"))) {
+                                         "fromNative", "(Ljava/lang/Class;Ljava/lang/Object;)Lcom/sun/unijna/NativeMapped;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method fromNative(Class, Object) from class com.sun.jna.Native");
+                "Can't obtain static method fromNative(Class, Object) from class com.sun.unijna.Native");
   }
   else if (!(MID_Native_fromNative
              = (*env)->GetStaticMethodID(env, classNative,
-                                         "fromNative", "(Ljava/lang/reflect/Method;Ljava/lang/Object;)Lcom/sun/jna/NativeMapped;"))) {
+                                         "fromNative", "(Ljava/lang/reflect/Method;Ljava/lang/Object;)Lcom/sun/unijna/NativeMapped;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method fromNative(Method, Object) from class com.sun.jna.Native");
+                "Can't obtain static method fromNative(Method, Object) from class com.sun.unijna.Native");
   }
   else if (!(MID_Native_nativeType
              = (*env)->GetStaticMethodID(env, classNative,
                                          "nativeType", "(Ljava/lang/Class;)Ljava/lang/Class;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method nativeType from class com.sun.jna.Native");
+                "Can't obtain static method nativeType from class com.sun.unijna.Native");
   }
   else if (!(MID_Native_toNativeTypeMapped
              = (*env)->GetStaticMethodID(env, classNative,
-                                         "toNative", "(Lcom/sun/jna/ToNativeConverter;Ljava/lang/Object;)Ljava/lang/Object;"))) {
+                                         "toNative", "(Lcom/sun/unijna/ToNativeConverter;Ljava/lang/Object;)Ljava/lang/Object;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method toNative from class com.sun.jna.Native");
+                "Can't obtain static method toNative from class com.sun.unijna.Native");
   }
   else if (!(MID_Native_fromNativeTypeMapped
              = (*env)->GetStaticMethodID(env, classNative,
-                                         "fromNative", "(Lcom/sun/jna/FromNativeConverter;Ljava/lang/Object;Ljava/lang/reflect/Method;)Ljava/lang/Object;"))) {
+                                         "fromNative", "(Lcom/sun/unijna/FromNativeConverter;Ljava/lang/Object;Ljava/lang/reflect/Method;)Ljava/lang/Object;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method fromNative(FromNativeConverter, Object, Method) from class com.sun.jna.Native");
+                "Can't obtain static method fromNative(FromNativeConverter, Object, Method) from class com.sun.unijna.Native");
   }
-  else if (!LOAD_CREF(env, Structure, "com/sun/jna/Structure")) {
+  else if (!LOAD_CREF(env, Structure, "com/sun/unijna/Structure")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.Structure");
+                "Can't obtain class com.sun.unijna.Structure");
   }
   else if (!LOAD_MID(env, MID_Structure_getTypeInfo, classStructure,
-                     "getTypeInfo", "()Lcom/sun/jna/Pointer;")) {
+                     "getTypeInfo", "()Lcom/sun/unijna/Pointer;")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain getTypeInfo method for class com.sun.jna.Structure");
+                "Can't obtain getTypeInfo method for class com.sun.unijna.Structure");
   }
   else if (!(MID_Structure_newInstance
              = (*env)->GetStaticMethodID(env, classStructure,
-                                         "newInstance", "(Ljava/lang/Class;J)Lcom/sun/jna/Structure;"))) {
+                                         "newInstance", "(Ljava/lang/Class;J)Lcom/sun/unijna/Structure;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static newInstance method for class com.sun.jna.Structure");
+                "Can't obtain static newInstance method for class com.sun.unijna.Structure");
   }
   else if (!LOAD_MID(env, MID_Structure_read, classStructure,
                      "autoRead", "()V")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain read method for class com.sun.jna.Structure");
+                "Can't obtain read method for class com.sun.unijna.Structure");
   }
   else if (!LOAD_MID(env, MID_Structure_write, classStructure,
                      "autoWrite", "()V")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain write method for class com.sun.jna.Structure");
+                "Can't obtain write method for class com.sun.unijna.Structure");
   }
-  else if (!LOAD_FID(env, FID_Structure_memory, classStructure, "memory", "Lcom/sun/jna/Pointer;")) {
+  else if (!LOAD_FID(env, FID_Structure_memory, classStructure, "memory", "Lcom/sun/unijna/Pointer;")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain memory field ID for class com.sun.jna.Structure");
+                "Can't obtain memory field ID for class com.sun.unijna.Structure");
   }
   else if (!LOAD_FID(env, FID_Structure_typeInfo, classStructure, "typeInfo", "J")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain typeInfo field ID for class com.sun.jna.Structure");
+                "Can't obtain typeInfo field ID for class com.sun.unijna.Structure");
   }
-  else if (!LOAD_CREF(env, StructureByValue, "com/sun/jna/Structure$ByValue")) {
+  else if (!LOAD_CREF(env, StructureByValue, "com/sun/unijna/Structure$ByValue")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.Structure.ByValue");
+                "Can't obtain class com.sun.unijna.Structure.ByValue");
   }
-  else if (!LOAD_CREF(env, Callback, "com/sun/jna/Callback")) {
+  else if (!LOAD_CREF(env, Callback, "com/sun/unijna/Callback")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.Callback");
+                "Can't obtain class com.sun.unijna.Callback");
   }
-  else if (!LOAD_CREF(env, AttachOptions, "com/sun/jna/CallbackReference$AttachOptions")) {
+  else if (!LOAD_CREF(env, AttachOptions, "com/sun/unijna/CallbackReference$AttachOptions")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.CallbackReference.AttachOptions");
+                "Can't obtain class com.sun.unijna.CallbackReference.AttachOptions");
   }
-  else if (!LOAD_CREF(env, CallbackReference, "com/sun/jna/CallbackReference")) {
+  else if (!LOAD_CREF(env, CallbackReference, "com/sun/unijna/CallbackReference")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.CallbackReference");
+                "Can't obtain class com.sun.unijna.CallbackReference");
   }
   else if (!(MID_CallbackReference_getCallback
              = (*env)->GetStaticMethodID(env, classCallbackReference,
-                                         "getCallback", "(Ljava/lang/Class;Lcom/sun/jna/Pointer;Z)Lcom/sun/jna/Callback;"))) {
+                                         "getCallback", "(Ljava/lang/Class;Lcom/sun/unijna/Pointer;Z)Lcom/sun/unijna/Callback;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method getCallback from class com.sun.jna.CallbackReference");
+                "Can't obtain static method getCallback from class com.sun.unijna.CallbackReference");
   }
   else if (!(MID_CallbackReference_getFunctionPointer
              = (*env)->GetStaticMethodID(env, classCallbackReference,
-                                         "getFunctionPointer", "(Lcom/sun/jna/Callback;Z)Lcom/sun/jna/Pointer;"))) {
+                                         "getFunctionPointer", "(Lcom/sun/unijna/Callback;Z)Lcom/sun/unijna/Pointer;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method getFunctionPointer from class com.sun.jna.CallbackReference");
+                "Can't obtain static method getFunctionPointer from class com.sun.unijna.CallbackReference");
   }
   else if (!(MID_CallbackReference_getNativeString
              = (*env)->GetStaticMethodID(env, classCallbackReference,
-                                         "getNativeString", "(Ljava/lang/Object;Z)Lcom/sun/jna/Pointer;"))) {
+                                         "getNativeString", "(Ljava/lang/Object;Z)Lcom/sun/unijna/Pointer;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method getNativeString from class com.sun.jna.CallbackReference");
+                "Can't obtain static method getNativeString from class com.sun.unijna.CallbackReference");
   }
   else if (!(MID_CallbackReference_initializeThread
              = (*env)->GetStaticMethodID(env, classCallbackReference,
-                                         "initializeThread", "(Lcom/sun/jna/Callback;Lcom/sun/jna/CallbackReference$AttachOptions;)Ljava/lang/ThreadGroup;"))) {
+                                         "initializeThread", "(Lcom/sun/unijna/Callback;Lcom/sun/unijna/CallbackReference$AttachOptions;)Ljava/lang/ThreadGroup;"))) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain static method initializeThread from class com.sun.jna.CallbackReference");
+                "Can't obtain static method initializeThread from class com.sun.unijna.CallbackReference");
   }
-  else if (!LOAD_CREF(env, WString, "com/sun/jna/WString")) {
+  else if (!LOAD_CREF(env, WString, "com/sun/unijna/WString")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.WString");
+                "Can't obtain class com.sun.unijna.WString");
   }
-  else if (!LOAD_CREF(env, NativeMapped, "com/sun/jna/NativeMapped")) {
+  else if (!LOAD_CREF(env, NativeMapped, "com/sun/unijna/NativeMapped")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.NativeMapped");
+                "Can't obtain class com.sun.unijna.NativeMapped");
   }
   else if (!LOAD_MID(env, MID_NativeMapped_toNative, classNativeMapped,
                      "toNative", "()Ljava/lang/Object;")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain toNative method for class com.sun.jna.NativeMapped");
+                "Can't obtain toNative method for class com.sun.unijna.NativeMapped");
   }
-  else if (!LOAD_CREF(env, IntegerType, "com/sun/jna/IntegerType")) {
+  else if (!LOAD_CREF(env, IntegerType, "com/sun/unijna/IntegerType")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.IntegerType");
+                "Can't obtain class com.sun.unijna.IntegerType");
   }
   else if (!LOAD_FID(env, FID_IntegerType_value, classIntegerType, "value", "J")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain value field ID for class com.sun.jna.IntegerType");
+                "Can't obtain value field ID for class com.sun.unijna.IntegerType");
   }
-  else if (!LOAD_CREF(env, PointerType, "com/sun/jna/PointerType")) {
+  else if (!LOAD_CREF(env, PointerType, "com/sun/unijna/PointerType")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.PointerType");
+                "Can't obtain class com.sun.unijna.PointerType");
   }
-  else if (!LOAD_FID(env, FID_PointerType_pointer, classPointerType, "pointer", "Lcom/sun/jna/Pointer;")) {
+  else if (!LOAD_FID(env, FID_PointerType_pointer, classPointerType, "pointer", "Lcom/sun/unijna/Pointer;")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain typeInfo field ID for class com.sun.jna.Structure");
+                "Can't obtain typeInfo field ID for class com.sun.unijna.Structure");
   }
   else if (!LOAD_MID(env, MID_WString_init, classWString,
                      "<init>", "(Ljava/lang/String;)V")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain constructor for class com.sun.jna.WString");
+                "Can't obtain constructor for class com.sun.unijna.WString");
   }
-  else if (!LOAD_CREF(env, JNIEnv, "com/sun/jna/JNIEnv")) {
+  else if (!LOAD_CREF(env, JNIEnv, "com/sun/unijna/JNIEnv")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.JNIEnv");
+                "Can't obtain class com.sun.unijna.JNIEnv");
   }
-  else if (!LOAD_CREF(env, _ffi_callback, "com/sun/jna/Native$ffi_callback")) {
+  else if (!LOAD_CREF(env, _ffi_callback, "com/sun/unijna/Native$ffi_callback")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.Native$ffi_callback");
+                "Can't obtain class com.sun.unijna.Native$ffi_callback");
   }
   else if (!LOAD_MID(env, MID_ffi_callback_invoke, class_ffi_callback,
                      "invoke", "(JJJ)V")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain invoke method from class com.sun.jna.Native$ffi_callback");
+                "Can't obtain invoke method from class com.sun.unijna.Native$ffi_callback");
   }
-  else if (!LOAD_CREF(env, FromNativeConverter, "com/sun/jna/FromNativeConverter")) {
+  else if (!LOAD_CREF(env, FromNativeConverter, "com/sun/unijna/FromNativeConverter")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain class com.sun.jna.FromNativeConverter");
+                "Can't obtain class com.sun.unijna.FromNativeConverter");
   }
   else if (!LOAD_MID(env, MID_FromNativeConverter_nativeType, classFromNativeConverter, 
                 "nativeType", "()Ljava/lang/Class;")) {
     throwByName(env, EUnsatisfiedLink,
-                "Can't obtain method nativeType for class com.sun.jna.FromNativeConverter");
+                "Can't obtain method nativeType for class com.sun.unijna.FromNativeConverter");
   }
   // Initialize type fields within Structure.FFIType
   else {
-#define CFFITYPE "com/sun/jna/Structure$FFIType$FFITypes"
+#define CFFITYPE "com/sun/unijna/Structure$FFIType$FFITypes"
     jclass cls = (*env)->FindClass(env, CFFITYPE);
     jfieldID fid;
     unsigned i;
@@ -3069,7 +3069,7 @@ Java_com_sun_jna_Native_initIDs(JNIEnv *env, jclass cls) {
     }
     for (i=0;i < sizeof(fields)/sizeof(fields[0]);i++) {
       snprintf(field, sizeof(field), "ffi_type_%s", fields[i]);
-      fid = (*env)->GetStaticFieldID(env, cls, field, "Lcom/sun/jna/Pointer;");
+      fid = (*env)->GetStaticFieldID(env, cls, field, "Lcom/sun/unijna/Pointer;");
       if (!fid) {
         throwByName(env, EUnsatisfiedLink, field);
         return;

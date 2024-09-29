@@ -21,10 +21,10 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.unix;
+package com.sun.unijna.platform.unix;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.AbstractPlatformTestSupport;
+import com.sun.unijna.platform.AbstractPlatformTestSupport;
+import com.sun.unijna.Native;
 
 /**
  * @author Lyor Goldstein

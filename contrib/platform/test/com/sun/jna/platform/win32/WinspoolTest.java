@@ -21,15 +21,17 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Native;
-import com.sun.jna.Structure;
-import com.sun.jna.platform.win32.WinNT.HANDLEByReference;
-import com.sun.jna.platform.win32.Winspool.PRINTER_INFO_1;
-import com.sun.jna.platform.win32.Winspool.PRINTER_INFO_2;
-import com.sun.jna.platform.win32.Winspool.PRINTER_INFO_4;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.Structure;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.Winspool;
+import com.sun.unijna.platform.win32.WinNT.HANDLEByReference;
+import com.sun.unijna.platform.win32.Winspool.PRINTER_INFO_1;
+import com.sun.unijna.platform.win32.Winspool.PRINTER_INFO_2;
+import com.sun.unijna.platform.win32.Winspool.PRINTER_INFO_4;
+import com.sun.unijna.ptr.IntByReference;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

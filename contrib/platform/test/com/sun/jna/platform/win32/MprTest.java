@@ -22,24 +22,35 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import static com.sun.unijna.win32.W32APIOptions.DEFAULT_OPTIONS;
+import static com.sun.unijna.win32.W32APIOptions.UNICODE_OPTIONS;
 
 import java.io.File;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.LMShare.SHARE_INFO_2;
-import com.sun.jna.platform.win32.WinNT.HANDLEByReference;
-import com.sun.jna.platform.win32.Winnetwk.ConnectFlag;
-import com.sun.jna.platform.win32.Winnetwk.NETRESOURCE;
-import com.sun.jna.platform.win32.Winnetwk.REMOTE_NAME_INFO;
-import com.sun.jna.platform.win32.Winnetwk.RESOURCESCOPE;
-import com.sun.jna.platform.win32.Winnetwk.RESOURCETYPE;
-import com.sun.jna.platform.win32.Winnetwk.RESOURCEUSAGE;
-import com.sun.jna.platform.win32.Winnetwk.UNIVERSAL_NAME_INFO;
-import com.sun.jna.ptr.IntByReference;
-import static com.sun.jna.win32.W32APIOptions.DEFAULT_OPTIONS;
-import static com.sun.jna.win32.W32APIOptions.UNICODE_OPTIONS;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.LMAccess;
+import com.sun.unijna.platform.win32.LMErr;
+import com.sun.unijna.platform.win32.LMShare;
+import com.sun.unijna.platform.win32.Mpr;
+import com.sun.unijna.platform.win32.Netapi32;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.Winnetwk;
+import com.sun.unijna.platform.win32.LMShare.SHARE_INFO_2;
+import com.sun.unijna.platform.win32.WinNT.HANDLEByReference;
+import com.sun.unijna.platform.win32.Winnetwk.ConnectFlag;
+import com.sun.unijna.platform.win32.Winnetwk.NETRESOURCE;
+import com.sun.unijna.platform.win32.Winnetwk.REMOTE_NAME_INFO;
+import com.sun.unijna.platform.win32.Winnetwk.RESOURCESCOPE;
+import com.sun.unijna.platform.win32.Winnetwk.RESOURCETYPE;
+import com.sun.unijna.platform.win32.Winnetwk.RESOURCEUSAGE;
+import com.sun.unijna.platform.win32.Winnetwk.UNIVERSAL_NAME_INFO;
+import com.sun.unijna.ptr.IntByReference;
 
 import junit.framework.TestCase;
 

@@ -20,13 +20,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.File;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.VerRsrc;
+import com.sun.unijna.platform.win32.Version;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
 

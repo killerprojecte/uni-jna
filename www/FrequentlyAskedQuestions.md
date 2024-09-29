@@ -173,7 +173,7 @@ There is an implementation included in the regular JNA distribution built with c
 Why does the VM sometimes crash in my shutdown hook on Windows?
 ---------------------------------------------------------------
 
-If you are using direct mapping, make sure you keep a reference to the JNA class `com.sun.jna.Native` until your shutdown hook completes. If you are using interface mapping, your library proxy will be keeping a reference internally, so an explicit reference is not required.
+If you are using direct mapping, make sure you keep a reference to the JNA class `com.sun.unijna.Native` until your shutdown hook completes. If you are using interface mapping, your library proxy will be keeping a reference internally, so an explicit reference is not required.
 
 If JNA unpacks its native code from its own jar file, it saves it in a temporary location and attempts to remove it when the `Native` class is finalized (which may or may not happen as the VM exits). In order to do so, it must first unload its native library from memory.
 
@@ -217,8 +217,8 @@ If you're using Proguard, you should also add the following to your Proguard rul
 
 ```
 -dontwarn java.awt.*
--keep class com.sun.jna.* { *; }
--keepclassmembers class * extends com.sun.jna.* { public *; }
+-keep class com.sun.unijna.* { *; }
+-keepclassmembers class * extends com.sun.unijna.* { public *; }
 ```
 
 On Windows, MSDN shows that TheFuncName is in somelib.dll but JNA throws UnsatisifiedLinkError: The specified procedure could not be found.
@@ -237,7 +237,7 @@ windows code page encoding and a “W” suffix indicates a function expecting w
 
 JNA won't automatically resolve one or the other variant. You should use a
 a combination of TypeMapper and FunctionMapper (see 
-`com.sun.jna.win32.W32APIOptions.DEFAULT_OPTIONS`) so that you can leave off the 
+`com.sun.unijna.win32.W32APIOptions.DEFAULT_OPTIONS`) so that you can leave off the 
 “-A” or “-W” suffix (you never need to use both simultaneously) and use 
 “String” rather than explicit “WString”.
 
@@ -254,7 +254,7 @@ and `jna-platform-jpms-5.8.0.jar`.  For a Maven build, use the following depende
   <version>5.8.0</version>
 </dependency>
 ```
-and include `requires com.sun.jna;` in your module descriptor in your `module-info.java` file.
+and include `requires com.sun.unijna;` in your module descriptor in your `module-info.java` file.
 
 If you use the `jna-platform` user-contributed mappings:
 ```
@@ -264,7 +264,7 @@ If you use the `jna-platform` user-contributed mappings:
   <version>5.8.0</version>
 </dependency>
 ```
-and include `requires com.sun.jna.platform;` in your module descriptor.
+and include `requires com.sun.unijna.platform;` in your module descriptor.
 
 If you have a library that may be consumed by downstream users, consider making these managed dependencies.
 
@@ -272,7 +272,7 @@ In addition to adding the `requires` directive, note that some JNA classes desig
 for inheritance make use of reflection to access constructors and/or fields of the subclass.
 Reflection is disabled by the module system's strong encapsulation.  It may be necessary to
 make packages which include subclasses of JNA's classes (such as `Structure` and
-`PointerType` among others) accessible via reflection to the `com.sun.jna` module
+`PointerType` among others) accessible via reflection to the `com.sun.unijna` module
 using either an `open` module, `opens`, or `opens ... to` directive, or an `exports` 
 or `exports ... to` directive, depending on the particular application and level of 
 access required. If migrating an existing project, `opens` replicates the full

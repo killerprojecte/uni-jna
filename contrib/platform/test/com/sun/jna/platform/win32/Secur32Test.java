@@ -21,22 +21,30 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.SspiUtil.ManagedSecBufferDesc;
-import com.sun.jna.platform.win32.Sspi.CredHandle;
-import com.sun.jna.platform.win32.Sspi.CtxtHandle;
-import com.sun.jna.platform.win32.Sspi.PSecPkgInfo;
-import com.sun.jna.platform.win32.Sspi.SecPkgContext_PackageInfo;
-import com.sun.jna.platform.win32.Sspi.SecPkgContext_Sizes;
-import com.sun.jna.platform.win32.Sspi.SecPkgCredentials_Names;
-import com.sun.jna.platform.win32.Sspi.SecPkgInfo;
-import com.sun.jna.platform.win32.Sspi.SecPkgInfo.ByReference;
-import com.sun.jna.platform.win32.Sspi.TimeStamp;
-import com.sun.jna.platform.win32.WinNT.HANDLEByReference;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.Secur32;
+import com.sun.unijna.platform.win32.Sspi;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.Sspi.CredHandle;
+import com.sun.unijna.platform.win32.Sspi.CtxtHandle;
+import com.sun.unijna.platform.win32.Sspi.PSecPkgInfo;
+import com.sun.unijna.platform.win32.Sspi.SecPkgContext_PackageInfo;
+import com.sun.unijna.platform.win32.Sspi.SecPkgContext_Sizes;
+import com.sun.unijna.platform.win32.Sspi.SecPkgCredentials_Names;
+import com.sun.unijna.platform.win32.Sspi.SecPkgInfo;
+import com.sun.unijna.platform.win32.Sspi.TimeStamp;
+import com.sun.unijna.platform.win32.Sspi.SecPkgInfo.ByReference;
+import com.sun.unijna.platform.win32.SspiUtil.ManagedSecBufferDesc;
+import com.sun.unijna.platform.win32.WinNT.HANDLEByReference;
+import com.sun.unijna.ptr.IntByReference;
+
 import java.nio.charset.Charset;
 import java.util.Arrays;
 

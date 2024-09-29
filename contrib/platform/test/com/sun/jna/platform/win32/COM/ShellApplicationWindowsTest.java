@@ -20,18 +20,23 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.Guid;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WinDef.LONG;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMLateBindingObject;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.Dispatch;
+import com.sun.unijna.platform.win32.COM.IDispatch;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WinDef.LONG;
+import com.sun.unijna.ptr.PointerByReference;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

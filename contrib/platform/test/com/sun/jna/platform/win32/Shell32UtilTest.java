@@ -21,9 +21,13 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import static org.junit.Assert.assertArrayEquals;
+
+import com.sun.unijna.platform.win32.KnownFolders;
+import com.sun.unijna.platform.win32.Shell32Util;
+import com.sun.unijna.platform.win32.ShlObj;
 
 import junit.framework.TestCase;
 

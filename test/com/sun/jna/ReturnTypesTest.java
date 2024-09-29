@@ -21,16 +21,27 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.nio.charset.Charset;
 import java.util.Collections;
 import java.util.List;
 import junit.framework.TestCase;
 
-import com.sun.jna.ReturnTypesTest.TestLibrary.SimpleStructure;
-import com.sun.jna.ReturnTypesTest.TestLibrary.TestSmallStructure;
-import com.sun.jna.ReturnTypesTest.TestLibrary.TestStructure;
+import com.sun.unijna.ReturnTypesTest.TestLibrary.SimpleStructure;
+import com.sun.unijna.ReturnTypesTest.TestLibrary.TestSmallStructure;
+import com.sun.unijna.ReturnTypesTest.TestLibrary.TestStructure;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.JNIEnv;
+import com.sun.unijna.Library;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeMapped;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.WString;
 
 /** Exercise a range of native methods.
  *

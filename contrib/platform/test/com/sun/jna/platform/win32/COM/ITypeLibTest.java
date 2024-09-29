@@ -21,27 +21,31 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.ITypeLib;
+import com.sun.unijna.platform.win32.COM.TypeInfo;
+import com.sun.unijna.platform.win32.COM.TypeLib;
+import com.sun.unijna.platform.win32.Guid.CLSID;
+import com.sun.unijna.platform.win32.Guid.GUID;
+import com.sun.unijna.platform.win32.OaIdl.MEMBERID;
+import com.sun.unijna.platform.win32.OaIdl.TYPEKIND;
+import com.sun.unijna.platform.win32.WinDef.LCID;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.ULONG;
+import com.sun.unijna.platform.win32.WinDef.USHORTByReference;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
 
-import com.sun.jna.platform.win32.Guid.CLSID;
-import com.sun.jna.platform.win32.Guid.GUID;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.OaIdl.MEMBERID;
-import com.sun.jna.platform.win32.OaIdl.TYPEKIND;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WinDef;
-import com.sun.jna.platform.win32.WinDef.LCID;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.ULONG;
-import com.sun.jna.platform.win32.WinDef.USHORTByReference;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.PointerByReference;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;

@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -30,6 +30,10 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.nio.ShortBuffer;
+
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+
 import junit.framework.TestCase;
 
 /** Exercise a range of native methods.

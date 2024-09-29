@@ -22,7 +22,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.mac;
+package com.sun.unijna.platform.mac;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -39,26 +39,27 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import com.sun.jna.platform.mac.CoreFoundation.CFDictionaryRef;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.mac.CoreFoundation.CFAllocatorRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFArrayRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFDataRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFIndex;
-import com.sun.jna.platform.mac.CoreFoundation.CFMutableDictionaryRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFNumberRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFNumberType;
-import com.sun.jna.platform.mac.CoreFoundation.CFStringRef;
-import com.sun.jna.platform.mac.CoreFoundation.CFTypeRef;
-import com.sun.jna.ptr.DoubleByReference;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.LongByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.mac.CoreFoundation;
+import com.sun.unijna.platform.mac.CoreFoundation.CFAllocatorRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFArrayRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFDataRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFDictionaryRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFIndex;
+import com.sun.unijna.platform.mac.CoreFoundation.CFMutableDictionaryRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFNumberRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFNumberType;
+import com.sun.unijna.platform.mac.CoreFoundation.CFStringRef;
+import com.sun.unijna.platform.mac.CoreFoundation.CFTypeRef;
+import com.sun.unijna.ptr.DoubleByReference;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.LongByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 public class CoreFoundationTest {
 

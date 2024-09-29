@@ -21,16 +21,29 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.ArgumentsMarshalTest.TestLibrary.CheckFieldAlignment;
-import com.sun.jna.ArgumentsMarshalTest.TestLibrary.MixedUnion1;
-import com.sun.jna.Structure.FieldOrder;
+import com.sun.unijna.ArgumentsMarshalTest.TestLibrary.CheckFieldAlignment;
+import com.sun.unijna.ArgumentsMarshalTest.TestLibrary.MixedUnion1;
+import com.sun.unijna.Callback;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeMapped;
+import com.sun.unijna.NativeString;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.PointerType;
+import com.sun.unijna.Structure;
+import com.sun.unijna.Union;
+import com.sun.unijna.WString;
+import com.sun.unijna.Structure.FieldOrder;
 
 /** Exercise a range of native methods.
  *

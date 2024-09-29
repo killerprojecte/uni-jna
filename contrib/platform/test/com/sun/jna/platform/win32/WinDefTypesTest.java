@@ -21,25 +21,25 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.lang.reflect.Constructor;
 import org.junit.Test;
 
-import com.sun.jna.IntegerType;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.WinDef.CHAR;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.DWORDLONG;
-import com.sun.jna.platform.win32.WinDef.LONG;
-import com.sun.jna.platform.win32.WinDef.LONGLONG;
-import com.sun.jna.platform.win32.WinDef.SHORT;
-import com.sun.jna.platform.win32.WinDef.UCHAR;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.ULONG;
-import com.sun.jna.platform.win32.WinDef.ULONGLONG;
-import com.sun.jna.platform.win32.WinDef.USHORT;
-import com.sun.jna.platform.win32.WinDef.WORD;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.WinDef.CHAR;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.DWORDLONG;
+import com.sun.unijna.platform.win32.WinDef.LONG;
+import com.sun.unijna.platform.win32.WinDef.LONGLONG;
+import com.sun.unijna.platform.win32.WinDef.SHORT;
+import com.sun.unijna.platform.win32.WinDef.UCHAR;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.ULONG;
+import com.sun.unijna.platform.win32.WinDef.ULONGLONG;
+import com.sun.unijna.platform.win32.WinDef.USHORT;
+import com.sun.unijna.platform.win32.WinDef.WORD;
 
 public class WinDefTypesTest extends AbstractWin32TestSupport {
 

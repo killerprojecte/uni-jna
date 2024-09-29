@@ -21,11 +21,12 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.Ole32Util;
+import com.sun.unijna.platform.win32.Guid.GUID;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.Guid.GUID;
 
 // TODO: Auto-generated Javadoc
 /**

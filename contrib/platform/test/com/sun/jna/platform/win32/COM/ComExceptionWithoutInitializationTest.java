@@ -20,12 +20,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
-import com.sun.jna.platform.win32.Guid;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMLateBindingObject;
+import com.sun.unijna.platform.win32.COM.IDispatch;
 
 public class ComExceptionWithoutInitializationTest {
 

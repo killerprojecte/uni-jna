@@ -21,13 +21,20 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.wince;
+package com.sun.unijna.wince;
 
 import junit.framework.TestCase;
-import com.sun.jna.*;
-import com.sun.jna.ptr.*;
-import com.sun.jna.win32.*;
+
 import java.util.List;
+
+import com.sun.unijna.LastErrorException;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.ptr.ByteByReference;
+import com.sun.unijna.*;
+import com.sun.unijna.ptr.*;
+import com.sun.unijna.win32.*;
 
 public class CoreDLLTest extends TestCase {
     public static void main(java.lang.String[] argList) {

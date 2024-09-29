@@ -22,7 +22,7 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -30,6 +30,11 @@ import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
+
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+
 import junit.framework.TestCase;
 
 

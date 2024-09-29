@@ -21,15 +21,17 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 import java.util.EnumSet;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinUser.RAWINPUTDEVICELIST;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.User32Util;
+import com.sun.unijna.platform.win32.Win32VK;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinUser.RAWINPUTDEVICELIST;
 
 import junit.framework.TestCase;
 
@@ -99,7 +101,7 @@ public final class User32UtilTest extends TestCase {
 
     /**
      * Assert some well known VK are members or not members of
-     * {@link com.sun.jna.platform.win32.User32Util#WIN32VK_MAPPABLE}
+     * {@link com.sun.unijna.platform.win32.User32Util#WIN32VK_MAPPABLE}
      *
      */
     public void testVkMappable() {

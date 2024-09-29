@@ -20,23 +20,26 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.awt.Frame;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.Wtsapi32.WTSINFO;
-import com.sun.jna.platform.win32.Wtsapi32.WTS_CLIENT_ADDRESS;
-import com.sun.jna.platform.win32.Wtsapi32.WTS_CONNECTSTATE_CLASS;
-import com.sun.jna.platform.win32.Wtsapi32.WTS_INFO_CLASS;
-import com.sun.jna.platform.win32.Wtsapi32.WTS_PROCESS_INFO_EX;
-import com.sun.jna.platform.win32.Wtsapi32.WTS_SESSION_INFO;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.IPHlpAPI;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.Wtsapi32;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.Wtsapi32.WTSINFO;
+import com.sun.unijna.platform.win32.Wtsapi32.WTS_CLIENT_ADDRESS;
+import com.sun.unijna.platform.win32.Wtsapi32.WTS_CONNECTSTATE_CLASS;
+import com.sun.unijna.platform.win32.Wtsapi32.WTS_INFO_CLASS;
+import com.sun.unijna.platform.win32.Wtsapi32.WTS_PROCESS_INFO_EX;
+import com.sun.unijna.platform.win32.Wtsapi32.WTS_SESSION_INFO;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
 
 import junit.framework.TestCase;
 

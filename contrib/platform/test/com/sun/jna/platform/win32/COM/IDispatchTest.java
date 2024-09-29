@@ -21,24 +21,28 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
 import junit.framework.TestCase;
 
-import com.sun.jna.WString;
-import com.sun.jna.platform.win32.Guid.CLSID;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.OaIdl.DISPIDByReference;
-import com.sun.jna.platform.win32.Guid;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.W32Errors;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WinDef.LCID;
-import com.sun.jna.platform.win32.WinDef.UINT;
-import com.sun.jna.platform.win32.WinDef.UINTByReference;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.WString;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.W32Errors;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.Dispatch;
+import com.sun.unijna.platform.win32.COM.IDispatch;
+import com.sun.unijna.platform.win32.Guid.CLSID;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.OaIdl.DISPIDByReference;
+import com.sun.unijna.platform.win32.WinDef.LCID;
+import com.sun.unijna.platform.win32.WinDef.UINT;
+import com.sun.unijna.platform.win32.WinDef.UINTByReference;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
 
 public class IDispatchTest extends TestCase {
     static {

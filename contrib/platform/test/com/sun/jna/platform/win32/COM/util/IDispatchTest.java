@@ -20,18 +20,26 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM.util;
+package com.sun.unijna.platform.win32.COM.util;
 
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.AbstractWin32TestSupport;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
-import com.sun.jna.platform.win32.COM.COMUtils;
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.COM.util.annotation.ComProperty;
-import com.sun.jna.platform.win32.OaIdl.DISPID;
-import com.sun.jna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.AbstractWin32TestSupport;
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
+
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.util.AbstractComEventCallbackListener;
+import com.sun.unijna.platform.win32.COM.util.IComEventCallbackCookie;
+import com.sun.unijna.platform.win32.COM.util.IConnectionPoint;
+import com.sun.unijna.platform.win32.COM.util.IDispatch;
+import com.sun.unijna.platform.win32.COM.util.IUnknown;
+import com.sun.unijna.platform.win32.COM.util.ObjectFactory;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComProperty;
+import com.sun.unijna.platform.win32.OaIdl.DISPID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -398,14 +406,14 @@ public class IDispatchTest {
     interface DWebBrowserEvents2EventTestIUnknown {
 
         @ComMethod(dispId = 0x000000fc)
-        void NavigateComplete2IUnknown(com.sun.jna.platform.win32.COM.IUnknown source, Object url);
+        void NavigateComplete2IUnknown(com.sun.unijna.platform.win32.COM.IUnknown source, Object url);
     }
 
     @ComInterface(iid = "{34A715A0-6587-11D0-924A-0020AFC7AC4D}")
     interface DWebBrowserEvents2EventTestIDispatch {
 
         @ComMethod(dispId = 0x000000fc)
-        void NavigateComplete2IDispatch(com.sun.jna.platform.win32.COM.IDispatch source, Object url);
+        void NavigateComplete2IDispatch(com.sun.unijna.platform.win32.COM.IDispatch source, Object url);
     }
 
     @ComInterface(iid = "{34A715A0-6587-11D0-924A-0020AFC7AC4D}")
@@ -440,13 +448,13 @@ public class IDispatchTest {
             }
         }
 
-        public void NavigateComplete2IUnknown(com.sun.jna.platform.win32.COM.IUnknown source, Object url) {
+        public void NavigateComplete2IUnknown(com.sun.unijna.platform.win32.COM.IUnknown source, Object url) {
             if (url instanceof String && ((String) url).startsWith("https://github.com/")) {
                 IUnknown = true;
             }
         }
 
-        public void NavigateComplete2IDispatch(com.sun.jna.platform.win32.COM.IDispatch source, Object url) {
+        public void NavigateComplete2IDispatch(com.sun.unijna.platform.win32.COM.IDispatch source, Object url) {
             if (url instanceof String && ((String) url).startsWith("https://github.com/")) {
                 IDispatch = true;
             }

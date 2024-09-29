@@ -22,28 +22,32 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.junit.Assume.*;
 
-import com.sun.jna.Memory;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_COLOR_TEMPERATURE;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_DISPLAY_TECHNOLOGY_TYPE;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_DRIVE_TYPE;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_GAIN_TYPE;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_POSITION_TYPE;
-import com.sun.jna.platform.win32.HighLevelMonitorConfigurationAPI.MC_SIZE_TYPE;
-import com.sun.jna.platform.win32.LowLevelMonitorConfigurationAPI.MC_TIMING_REPORT;
-import com.sun.jna.platform.win32.PhysicalMonitorEnumerationAPI.PHYSICAL_MONITOR;
-import com.sun.jna.platform.win32.WTypes.LPSTR;
-import com.sun.jna.platform.win32.WinDef.BOOL;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.DWORDByReference;
-import com.sun.jna.platform.win32.WinDef.POINT;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.WinUser.HMONITOR;
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.win32.Dxva2;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.WinUser;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_COLOR_TEMPERATURE;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_DISPLAY_TECHNOLOGY_TYPE;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_DRIVE_TYPE;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_GAIN_TYPE;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_POSITION_TYPE;
+import com.sun.unijna.platform.win32.HighLevelMonitorConfigurationAPI.MC_SIZE_TYPE;
+import com.sun.unijna.platform.win32.LowLevelMonitorConfigurationAPI.MC_TIMING_REPORT;
+import com.sun.unijna.platform.win32.PhysicalMonitorEnumerationAPI.PHYSICAL_MONITOR;
+import com.sun.unijna.platform.win32.WTypes.LPSTR;
+import com.sun.unijna.platform.win32.WinDef.BOOL;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.DWORDByReference;
+import com.sun.unijna.platform.win32.WinDef.POINT;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.WinUser.HMONITOR;
 
 
 /**

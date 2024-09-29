@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.io.File;
 import java.util.Collection;
@@ -29,9 +29,15 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Kernel32Util;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.ptr.IntByReference;
 
 public class Kernel32VolumeManagementFunctionsTest extends AbstractWin32TestSupport {
     public Kernel32VolumeManagementFunctionsTest() {

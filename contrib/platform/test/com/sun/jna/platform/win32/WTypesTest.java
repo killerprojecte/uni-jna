@@ -21,12 +21,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Memory;
-import com.sun.jna.Native;
-import com.sun.jna.Pointer;
-import com.sun.jna.platform.win32.WTypes.BSTR;
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WTypes.BSTR;
+
 import junit.framework.TestCase;
 
 public class WTypesTest extends TestCase {

@@ -21,13 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.Advapi32;
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.LMJoin;
+import com.sun.unijna.platform.win32.Netapi32Util;
+import com.sun.unijna.platform.win32.Ole32Util;
+import com.sun.unijna.platform.win32.Netapi32Util.DomainController;
+import com.sun.unijna.platform.win32.Netapi32Util.DomainTrust;
+import com.sun.unijna.platform.win32.Netapi32Util.UserInfo;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.Netapi32Util.DomainController;
-import com.sun.jna.platform.win32.Netapi32Util.DomainTrust;
-import com.sun.jna.platform.win32.Netapi32Util.UserInfo;
 
 /**
  * @author dblock[at]dblock[dot]org

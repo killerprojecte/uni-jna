@@ -21,11 +21,12 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
+
+import com.sun.unijna.platform.win32.Rasapi32Util;
+import com.sun.unijna.platform.win32.Rasapi32Util.Ras32Exception;
 
 import junit.framework.TestCase;
-
-import com.sun.jna.platform.win32.Rasapi32Util.Ras32Exception;
 
 /**
  * @author drrobison@openroadsconsulting.com

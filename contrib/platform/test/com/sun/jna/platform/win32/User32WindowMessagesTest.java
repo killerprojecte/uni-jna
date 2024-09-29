@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -31,25 +31,28 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import com.sun.jna.CallbackReference;
-import com.sun.jna.Native;
-import com.sun.jna.Platform;
-import com.sun.jna.Pointer;
-import com.sun.jna.Structure;
-import com.sun.jna.platform.win32.BaseTSD.ULONG_PTR;
-import com.sun.jna.platform.win32.WinDef.HINSTANCE;
-import com.sun.jna.platform.win32.WinDef.HMODULE;
-import com.sun.jna.platform.win32.WinDef.HWND;
-import com.sun.jna.platform.win32.WinDef.LPARAM;
-import com.sun.jna.platform.win32.WinDef.LRESULT;
-import com.sun.jna.platform.win32.WinDef.WPARAM;
-import com.sun.jna.platform.win32.WinUser.COPYDATASTRUCT;
-import com.sun.jna.platform.win32.WinUser.HHOOK;
-import com.sun.jna.platform.win32.WinUser.HOOKPROC;
-import com.sun.jna.platform.win32.WinUser.MSG;
-import com.sun.jna.platform.win32.WinUser.WNDCLASSEX;
-import com.sun.jna.platform.win32.WinUser.WNDENUMPROC;
-import com.sun.jna.platform.win32.WinUser.WindowProc;
+import com.sun.unijna.CallbackReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.User32;
+import com.sun.unijna.platform.win32.WinUser;
+import com.sun.unijna.platform.win32.BaseTSD.ULONG_PTR;
+import com.sun.unijna.platform.win32.WinDef.HINSTANCE;
+import com.sun.unijna.platform.win32.WinDef.HMODULE;
+import com.sun.unijna.platform.win32.WinDef.HWND;
+import com.sun.unijna.platform.win32.WinDef.LPARAM;
+import com.sun.unijna.platform.win32.WinDef.LRESULT;
+import com.sun.unijna.platform.win32.WinDef.WPARAM;
+import com.sun.unijna.platform.win32.WinUser.COPYDATASTRUCT;
+import com.sun.unijna.platform.win32.WinUser.HHOOK;
+import com.sun.unijna.platform.win32.WinUser.HOOKPROC;
+import com.sun.unijna.platform.win32.WinUser.MSG;
+import com.sun.unijna.platform.win32.WinUser.WNDCLASSEX;
+import com.sun.unijna.platform.win32.WinUser.WNDENUMPROC;
+import com.sun.unijna.platform.win32.WinUser.WindowProc;
 
 /**
  * Demonstration of windows message api of complex structures like WM_COPYDATA.

@@ -20,35 +20,39 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM.util;
+package com.sun.unijna.platform.win32.COM.util;
 
-import com.sun.jna.Pointer;
-import static com.sun.jna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
-import com.sun.jna.platform.win32.COM.COMException;
-import com.sun.jna.platform.win32.COM.COMLateBindingObject;
-import com.sun.jna.platform.win32.COM.COMUtils;
-import com.sun.jna.platform.win32.COM.Dispatch;
-import com.sun.jna.platform.win32.COM.util.annotation.ComInterface;
-import com.sun.jna.platform.win32.COM.util.annotation.ComMethod;
-import com.sun.jna.platform.win32.COM.util.annotation.ComObject;
-import com.sun.jna.platform.win32.Guid;
-import com.sun.jna.platform.win32.Guid.CLSID;
-import com.sun.jna.platform.win32.Guid.GUID;
-import com.sun.jna.platform.win32.Guid.IID;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.OaIdl;
-import com.sun.jna.platform.win32.OaIdl.DISPID;
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.Variant.VARIANT;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WinDef;
-import com.sun.jna.platform.win32.WinDef.WORD;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.PointerByReference;
+import static com.sun.unijna.platform.win32.AbstractWin32TestSupport.checkCOMRegistered;
+
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.win32.Guid;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.OaIdl;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinDef;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMLateBindingObject;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.Dispatch;
+import com.sun.unijna.platform.win32.COM.util.IDispatch;
+import com.sun.unijna.platform.win32.COM.util.ObjectFactory;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComInterface;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComMethod;
+import com.sun.unijna.platform.win32.COM.util.annotation.ComObject;
+import com.sun.unijna.platform.win32.Guid.CLSID;
+import com.sun.unijna.platform.win32.Guid.GUID;
+import com.sun.unijna.platform.win32.Guid.IID;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.OaIdl.DISPID;
+import com.sun.unijna.platform.win32.Variant.VARIANT;
+import com.sun.unijna.platform.win32.WinDef.WORD;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.PointerByReference;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static org.hamcrest.CoreMatchers.is;

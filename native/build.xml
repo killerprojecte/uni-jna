@@ -111,9 +111,9 @@
         <mkdir dir="${build.native.folder}"/>
         <echo level="info" message="Create native class headers in ${build.native.folder}"/>
         <javah classpath="${module.target.classes}" destdir="${build.native.folder}" force="yes" verbose="true">
-            <class name="com.sun.jna.Function"/>
-            <class name="com.sun.jna.Native"/>
-            <class name="com.sun.jna.win32.DLLCallback"/>
+            <class name="com.sun.unijna.Function"/>
+            <class name="com.sun.unijna.Native"/>
+            <class name="com.sun.unijna.win32.DLLCallback"/>
         </javah>
         <condition property="grep" value="/usr/sfw/bin/ggrep">
             <os name="SunOS"/>
@@ -362,7 +362,7 @@
         <property name="make" value="make"/>
 
         <!-- Native resource path within jna.jar -->
-        <property name="native.path" value="com/sun/jna/${os.prefix}"/>
+        <property name="native.path" value="com/sun/unijna/${os.prefix}"/>
         <mkdir dir="${build.native.folder}"/>
         <echo level="info" message="${make} ${makefile.path} - target=${build.native.folder}"/>
         <exec executable="${make}" dir="${module.root.folder}" failonerror="true">

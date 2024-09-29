@@ -21,18 +21,28 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
-import com.sun.jna.Native;
+import static com.sun.unijna.platform.win32.Tlhelp32.TH32CS_SNAPALL;
+
 import java.lang.reflect.Method;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.sun.jna.platform.AbstractPlatformTestSupport;
-import static com.sun.jna.platform.win32.Tlhelp32.TH32CS_SNAPALL;
-import com.sun.jna.platform.win32.WinDef.LCID;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.AbstractPlatformTestSupport;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Advapi32Util;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Tlhelp32;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinBase;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.WinReg;
+import com.sun.unijna.platform.win32.WinDef.LCID;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+
 import java.util.Arrays;
 import java.util.Collections;
 

@@ -21,14 +21,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.linux;
+package com.sun.unijna.platform.linux;
 
 import org.junit.Test;
 
-import com.sun.jna.platform.linux.Udev.UdevContext;
-import com.sun.jna.platform.linux.Udev.UdevDevice;
-import com.sun.jna.platform.linux.Udev.UdevEnumerate;
-import com.sun.jna.platform.linux.Udev.UdevListEntry;
+import com.sun.unijna.platform.linux.Udev;
+import com.sun.unijna.platform.linux.Udev.UdevContext;
+import com.sun.unijna.platform.linux.Udev.UdevDevice;
+import com.sun.unijna.platform.linux.Udev.UdevEnumerate;
+import com.sun.unijna.platform.linux.Udev.UdevListEntry;
 
 import junit.framework.TestCase;
 

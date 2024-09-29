@@ -22,14 +22,16 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.linux;
+package com.sun.unijna.platform.linux;
 
-import com.sun.jna.Memory;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
 
 import org.junit.Test;
+
+import com.sun.unijna.Memory;
+import com.sun.unijna.platform.linux.XAttrUtil;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;

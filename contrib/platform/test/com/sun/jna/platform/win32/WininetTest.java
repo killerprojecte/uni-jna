@@ -21,15 +21,18 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32;
+package com.sun.unijna.platform.win32;
 
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import com.sun.jna.Native;
-import com.sun.jna.platform.win32.WinNT.HANDLE;
-import com.sun.jna.platform.win32.Wininet.INTERNET_CACHE_ENTRY_INFO;
-import com.sun.jna.ptr.IntByReference;
+import com.sun.unijna.Native;
+import com.sun.unijna.platform.win32.Win32Exception;
+import com.sun.unijna.platform.win32.WinError;
+import com.sun.unijna.platform.win32.Wininet;
+import com.sun.unijna.platform.win32.WinNT.HANDLE;
+import com.sun.unijna.platform.win32.Wininet.INTERNET_CACHE_ENTRY_INFO;
+import com.sun.unijna.ptr.IntByReference;
 
 public class WininetTest extends AbstractWin32TestSupport {
 

@@ -20,13 +20,15 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;
 import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
+
+import com.sun.unijna.Structure;
 
 import java.lang.reflect.*;
 import java.util.ArrayList;
@@ -36,7 +38,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Utility class for detecting missing {@link com.sun.jna.Structure#getFieldOrder()} methods.
+ * Utility class for detecting missing {@link com.sun.unijna.Structure#getFieldOrder()} methods.
  *
  * This class could be moved to the unit test tree, but then reusing it in the 'platform' project would require
  * publishing this test tree.

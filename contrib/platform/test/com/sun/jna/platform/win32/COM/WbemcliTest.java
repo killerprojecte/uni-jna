@@ -21,8 +21,10 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
+import static com.sun.unijna.platform.win32.Variant.VT_ARRAY;
+import static com.sun.unijna.platform.win32.Variant.VT_BSTR;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -36,21 +38,23 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static com.sun.jna.platform.win32.Variant.VT_ARRAY;
-import static com.sun.jna.platform.win32.Variant.VT_BSTR;
+import com.sun.unijna.platform.win32.Kernel32;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.OleAuto;
+import com.sun.unijna.platform.win32.Variant;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMException;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.Wbemcli;
+import com.sun.unijna.platform.win32.COM.WbemcliUtil;
+import com.sun.unijna.platform.win32.COM.Wbemcli.IEnumWbemClassObject;
+import com.sun.unijna.platform.win32.COM.Wbemcli.IWbemClassObject;
+import com.sun.unijna.platform.win32.COM.WbemcliUtil.WmiQuery;
+import com.sun.unijna.platform.win32.COM.WbemcliUtil.WmiResult;
+import com.sun.unijna.platform.win32.OaIdl.SAFEARRAY;
+import com.sun.unijna.ptr.IntByReference;
 
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.Variant;
-import com.sun.jna.platform.win32.COM.Wbemcli.IEnumWbemClassObject;
-import com.sun.jna.platform.win32.COM.Wbemcli.IWbemClassObject;
-import com.sun.jna.platform.win32.COM.WbemcliUtil.WmiQuery;
-import com.sun.jna.platform.win32.COM.WbemcliUtil.WmiResult;
-import com.sun.jna.platform.win32.OleAuto;
-import com.sun.jna.platform.win32.OaIdl.SAFEARRAY;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.Kernel32;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.ptr.IntByReference;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;

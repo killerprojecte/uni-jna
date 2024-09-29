@@ -23,12 +23,19 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
+
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeString;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.PointerType;
 
 import junit.framework.TestCase;
 

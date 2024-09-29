@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna.platform.win32.COM;
+package com.sun.unijna.platform.win32.COM;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -30,16 +30,24 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.sun.jna.platform.win32.Ole32;
-import com.sun.jna.platform.win32.Guid.REFIID;
-import com.sun.jna.platform.win32.WTypes;
-import com.sun.jna.platform.win32.WTypes.BSTRByReference;
-import com.sun.jna.platform.win32.WinDef.DWORD;
-import com.sun.jna.platform.win32.WinDef.ULONG;
-import com.sun.jna.platform.win32.WinDef.ULONGByReference;
-import com.sun.jna.platform.win32.WinNT;
-import com.sun.jna.platform.win32.WinNT.HRESULT;
-import com.sun.jna.ptr.PointerByReference;
+import com.sun.unijna.platform.win32.Ole32;
+import com.sun.unijna.platform.win32.WTypes;
+import com.sun.unijna.platform.win32.WinNT;
+import com.sun.unijna.platform.win32.COM.COMUtils;
+import com.sun.unijna.platform.win32.COM.EnumMoniker;
+import com.sun.unijna.platform.win32.COM.IEnumMoniker;
+import com.sun.unijna.platform.win32.COM.IRunningObjectTable;
+import com.sun.unijna.platform.win32.COM.IUnknown;
+import com.sun.unijna.platform.win32.COM.Moniker;
+import com.sun.unijna.platform.win32.COM.RunningObjectTable;
+import com.sun.unijna.platform.win32.COM.Unknown;
+import com.sun.unijna.platform.win32.Guid.REFIID;
+import com.sun.unijna.platform.win32.WTypes.BSTRByReference;
+import com.sun.unijna.platform.win32.WinDef.DWORD;
+import com.sun.unijna.platform.win32.WinDef.ULONG;
+import com.sun.unijna.platform.win32.WinDef.ULONGByReference;
+import com.sun.unijna.platform.win32.WinNT.HRESULT;
+import com.sun.unijna.ptr.PointerByReference;
 
 public class RunningObjectTable_Test {
 

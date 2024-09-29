@@ -22,9 +22,13 @@
  * containing JNA, in file "AL2.0".
  */
 
-package com.sun.jna;
+package com.sun.unijna;
 
 import org.junit.Test;
+
+import com.sun.unijna.Library;
+import com.sun.unijna.Native;
+
 import static org.junit.Assert.*;
 
 public class DefaultMethodInvocationTest {

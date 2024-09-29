@@ -21,7 +21,7 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -34,6 +34,24 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.sun.unijna.Callback;
+import com.sun.unijna.DefaultTypeMapper;
+import com.sun.unijna.FromNativeContext;
+import com.sun.unijna.FunctionMapper;
+import com.sun.unijna.IntegerType;
+import com.sun.unijna.Library;
+import com.sun.unijna.MethodResultContext;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLibrary;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.NativeMapped;
+import com.sun.unijna.Platform;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.Structure;
+import com.sun.unijna.ToNativeContext;
+import com.sun.unijna.TypeConverter;
+import com.sun.unijna.TypeMapper;
 
 import junit.framework.TestCase;
 

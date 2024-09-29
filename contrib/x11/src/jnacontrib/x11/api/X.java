@@ -23,22 +23,22 @@
  */
 package jnacontrib.x11.api;
 
-import com.sun.jna.Native;
-import com.sun.jna.NativeLong;
-import com.sun.jna.Pointer;
-import com.sun.jna.Memory;
-import com.sun.jna.ptr.IntByReference;
-import com.sun.jna.ptr.NativeLongByReference;
-import com.sun.jna.ptr.PointerByReference;
-
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
+
+import com.sun.unijna.Memory;
+import com.sun.unijna.Native;
+import com.sun.unijna.NativeLong;
+import com.sun.unijna.Pointer;
+import com.sun.unijna.platform.unix.X11;
+import com.sun.unijna.platform.unix.X11.Atom;
+import com.sun.unijna.platform.unix.X11.WindowByReference;
+import com.sun.unijna.ptr.IntByReference;
+import com.sun.unijna.ptr.NativeLongByReference;
+import com.sun.unijna.ptr.PointerByReference;
+
 import java.util.ArrayList;
 import java.awt.Rectangle;
-
-import com.sun.jna.platform.unix.X11;
-import com.sun.jna.platform.unix.X11.Atom;
-import com.sun.jna.platform.unix.X11.WindowByReference;
 
 /**
  * Object oriented X window system.

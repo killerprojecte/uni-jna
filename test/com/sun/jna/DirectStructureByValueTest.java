@@ -21,7 +21,9 @@
  * A copy is also included in the downloadable source code package
  * containing JNA, in file "AL2.0".
  */
-package com.sun.jna;
+package com.sun.unijna;
+
+import com.sun.unijna.Native;
 
 /** General structure by value functionality tests. */
 public class DirectStructureByValueTest extends StructureByValueTest {
